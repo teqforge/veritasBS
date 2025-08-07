@@ -11,58 +11,68 @@
   # Functions directory
   functions = "netlify/functions"
 
-# HTMX API endpoints
+# Function redirects (must come before catch-all)
 [[redirects]]
   from = "/download-guide"
   to = "/.netlify/functions/download-guide"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/newsletter"
   to = "/.netlify/functions/newsletter"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/contact"
   to = "/.netlify/functions/contact"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/question-details/*"
   to = "/.netlify/functions/question-details"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/service-details/*"
   to = "/.netlify/functions/service-details"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/stat-detail/*"
   to = "/.netlify/functions/stat-detail"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/quick-book"
   to = "/.netlify/functions/quick-book"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/contact-form-fields"
   to = "/.netlify/functions/contact-form-fields"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/store-lead"
   to = "/.netlify/functions/store-lead"
   status = 200
+  force = true
 
 [[redirects]]
   from = "/admin/leads"
   to = "/.netlify/functions/view-leads"
   status = 200
+  force = true
 
-# Redirects for SPA routing (if needed)
+# Catch-all redirect for SPA routing (must come last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
