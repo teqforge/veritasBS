@@ -135,7 +135,7 @@ function validateField(field) {
     // Required field validation
     if (field.hasAttribute('required') && !value) {
         isValid = false;
-        errorMessage = `${field.labels[0].textContent.replace(' *', '')} is required`;
+        errorMessage = `${field.labels[0]?.textContent.replace(' *', '') || fieldName} is required`;
     }
     
     // Email validation
@@ -160,6 +160,14 @@ function validateField(field) {
         if (value.length < 10) {
             isValid = false;
             errorMessage = 'Message must be at least 10 characters long';
+        }
+    }
+    
+    // Privacy checkbox validation
+    if (fieldName === 'privacy' && field.hasAttribute('required')) {
+        if (!field.checked) {
+            isValid = false;
+            errorMessage = 'You must agree to the privacy policy';
         }
     }
     
