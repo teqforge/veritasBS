@@ -2,7 +2,6 @@ functionsDirectory = "/Users/chrisrobertson/veritasBS/netlify/functions"
 functionsDirectoryOrigin = "config-v1"
 headersOrigin = "config"
 redirectsOrigin = "config"
-plugins = []
 
 [build]
 publish = "/Users/chrisrobertson/veritasBS/web"
@@ -28,6 +27,12 @@ skip_processing = false
 [functions]
 
 [functions."*"]
+
+[[plugins]]
+origin = "config"
+package = "@netlify/plugin-functions-install-core"
+
+[plugins.inputs]
 
 [[headers]]
 for = "/*"
