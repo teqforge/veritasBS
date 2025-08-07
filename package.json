@@ -1,0 +1,24 @@
+{
+  "name": "veritas-bs-website",
+  "version": "1.0.0",
+  "description": "Veritas BS - Truth Before Disaster",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "deploy": "netlify deploy --dir=web --prod"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.1"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  },
+  "keywords": [
+    "consulting",
+    "decision-making",
+    "reality-checks",
+    "business-strategy"
+  ],
+  "author": "Veritas BS",
+  "license": "MIT"
+} 
