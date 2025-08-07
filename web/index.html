@@ -75,23 +75,6 @@
             50% { opacity: 0.5; }
         }
 
-        /* Smooth transitions */
-        .htmx-swapping {
-            opacity: 0;
-            transition: opacity 100ms ease-out;
-        }
-
-        .htmx-settling {
-            opacity: 1;
-            transition: opacity 300ms ease-in;
-        }
-
-        /* Form validation */
-        .htmx-request input:invalid {
-            border-color: #e53e3e;
-            box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
-        }
-
         /* Success states */
         .success-message {
             background: #f0fff4;
@@ -105,80 +88,6 @@
         @keyframes slideIn {
             from { transform: translateY(-10px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
-        }
-        
-        /* Question details styling */
-        .question-details {
-            background: white;
-            border-top: 1px solid #e2e8f0;
-            padding: 32px;
-        }
-        
-        /* Service tabs */
-        .service-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        
-        .tab-button {
-            padding: 16px 24px;
-            background: none;
-            border: none;
-            color: #718096;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
-        
-        .tab-button.active {
-            color: #3182ce;
-            border-bottom-color: #3182ce;
-        }
-        
-        .tab-button:hover {
-            color: #3182ce;
-        }
-        
-        /* Newsletter signup */
-        .newsletter-signup {
-            margin-top: 40px;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            align-items: center;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .newsletter-input {
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            flex: 1;
-        }
-        
-        .newsletter-button {
-            background: #38a169;
-            color: white;
-            padding: 12px 20px;
-            border-radius: 6px;
-            white-space: nowrap;
-            border: none;
-            cursor: pointer;
-        }
-        
-        /* Stat detail popup */
-        .stat-detail {
-            margin-top: 20px;
-            padding: 20px;
-            background: #f7fafc;
-            border-radius: 8px;
-            min-height: 60px;
         }
         
         /* Download feedback */
@@ -274,369 +183,415 @@
     </header>
 
     <main id="main-content" role="main">
-        <!-- Hero Section -->
-        <section class="hero section-white" aria-labelledby="hero-title">
-            <div class="container center-aligned">
-                <h1 id="hero-title">
+        <!-- Enhanced Hero Section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <!-- Main Headline -->
+                <h1 id="hero-title" class="hero-title">
                     Most Failed Projects Had Someone Who Knew They'd Fail
                 </h1>
                 
-                <p>
-                    The Reality Check: 30 minutes weekly to surface uncomfortable truths before they cost millions
-                </p>
+                <!-- Enhanced Subheadline -->
+                <div class="hero-subtitle">
+                    <p class="body-large">Right now, someone on your team knows your current project will fail.</p>
+                    <p class="body-large"><strong>They just can't say it.</strong></p>
+                </div>
                 
-                <!-- Enhanced PDF Download with HTMX -->
-                <div hx-target="#download-result" class="download-section">
-                    <button 
-                        hx-post="/download-guide" 
-                        hx-vals='{"guide": "reality-check-methodology", "source": "hero"}'
-                        hx-indicator="#download-spinner"
-                        class="btn btn-primary">
-                        
-                        <span class="htmx-normal">Download Free Methodology Guide</span>
-                        <span class="htmx-indicator" id="download-spinner">
-                            <svg width="16" height="16" fill="currentColor" class="animate-spin" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM2.04 4.326A.5.5 0 0 0 1 4.5v7a.5.5 0 0 0 .854.354l2.5-2.5A.5.5 0 0 0 4 8.5V6.707l6.646 6.647a.5.5 0 0 0 .708-.708L4.707 6H6.5a.5.5 0 0 0 .354-.146L9.354 3.354A.5.5 0 0 0 9 3H2a.5.5 0 0 0-.04.326z"/>
-                            </svg>
-                            Preparing your guide...
-                        </span>
+                <!-- Value Proposition -->
+                <div class="hero-description">
+                    <p class="body-regular">
+                        The Reality Check: <strong>30 minutes weekly</strong> that prevents <strong>£2.3M disasters</strong> 
+                        by surfacing uncomfortable truths before they become expensive mistakes.
+                    </p>
+                </div>
+                
+                <!-- Primary CTA -->
+                <div class="hero-cta">
+                    <button class="cta-primary" hx-post="/download-guide" hx-target="#download-result">
+                        <span class="cta-text">Get the Complete Reality Check Guide</span>
+                        <span class="cta-subtext">Free • 50 pages • Start This Thursday</span>
                     </button>
-                    
-                    <!-- Download result area -->
                     <div id="download-result" class="download-feedback"></div>
                 </div>
                 
-                <!-- Newsletter signup with HTMX -->
-                <div class="newsletter-signup">
-                    <form hx-post="/newsletter" 
-                          hx-target="#newsletter-result" 
-                          hx-indicator="#newsletter-spinner"
-                          class="newsletter-form">
-                        
-                        <input type="email" 
-                               name="email" 
-                               placeholder="Get weekly Reality Check tips"
-                               required
-                               class="newsletter-input">
-                               
-                        <button type="submit" class="newsletter-button">
-                            <span class="htmx-normal">Subscribe</span>
-                            <span class="htmx-indicator" id="newsletter-spinner">...</span>
-                        </button>
-                    </form>
-                    <div id="newsletter-result" style="margin-top: 12px; font-size: 14px;"></div>
+                <!-- Trust Indicators -->
+                <div class="hero-trust">
+                    <p class="trust-text">Based on research from PMI, Standish Group, and Google's Project Aristotle</p>
                 </div>
-
-                <!-- Stats with hover details -->
+                
+                <!-- Enhanced Stats with Hover Details -->
                 <div class="hero-stats">
-                    <div hx-get="/stat-detail/failure-cost" 
-                         hx-target="#stat-detail" 
-                         hx-trigger="mouseenter"
-                         style="cursor: pointer;">
-                        <div class="stat-number">£2.3M</div>
-                        <div class="stat-label">Average project failure cost</div>
-                    </div>
-                    <div hx-get="/stat-detail/failure-rate" 
-                         hx-target="#stat-detail" 
+                    <div class="stat-item" 
+                         hx-get="/stat-detail/failure-cost" 
+                         hx-target="#stat-popup" 
                          hx-trigger="mouseenter">
-                        <div class="stat-number">70%</div>
-                        <div class="stat-label">Projects that fail</div>
+                        <span class="stat-number">£2.3M</span>
+                        <span class="stat-label">Average project failure cost</span>
                     </div>
-                    <div hx-get="/stat-detail/warning-time" 
-                         hx-target="#stat-detail" 
+                    
+                    <div class="stat-item"
+                         hx-get="/stat-detail/failure-rate" 
+                         hx-target="#stat-popup" 
                          hx-trigger="mouseenter">
-                        <div class="stat-number">Week 8</div>
-                        <div class="stat-label">When someone knows</div>
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">Projects that fail to deliver</span>
+                    </div>
+                    
+                    <div class="stat-item"
+                         hx-get="/stat-detail/warning-time" 
+                         hx-target="#stat-popup" 
+                         hx-trigger="mouseenter">
+                        <span class="stat-number">Week 8</span>
+                        <span class="stat-label">When someone usually knows</span>
                     </div>
                 </div>
                 
-                <!-- Stat detail popup -->
-                <div id="stat-detail" class="stat-detail">
-                    <!-- Hover over stats to see sources and additional context -->
-                </div>
+                <!-- Stats Detail Popup -->
+                <div id="stat-popup" class="stat-detail-popup"></div>
             </div>
         </section>
 
-        <!-- Problem Section -->
-        <section id="problem" class="problem section-light">
-            <div class="container max-width-800px">
+        <!-- Enhanced Problem Section -->
+        <section id="problem" class="problem-section">
+            <div class="problem-container">
                 <h2>The £2.3M Question Everyone's Afraid to Ask</h2>
                 
-                <div class="problem-list">
-                    <ul>
-                        <li>Average cost of a failed project: £2.3M</li>
-                        <li>70% of projects fail to deliver expected benefits</li>
-                        <li>Most failure indicators appear by week 8</li>
-                        <li>Someone on the team usually knows by week 8</li>
-                        <li><strong>They rarely speak up until it's too late</strong></li>
-                    </ul>
+                <!-- Sound Familiar Box -->
+                <div class="sound-familiar-box">
+                    <h3>Sound Familiar?</h3>
+                    <div class="familiar-grid">
+                        <div class="familiar-item">
+                            <span class="familiar-icon">📊</span>
+                            <p>Team meetings end with everyone agreeing everything's "on track"</p>
+                        </div>
+                        <div class="familiar-item">
+                            <span class="familiar-icon">🤔</span>
+                            <p>You have a nagging feeling something's not right but can't put your finger on it</p>
+                        </div>
+                        <div class="familiar-item">
+                            <span class="familiar-icon">💸</span>
+                            <p>Previous projects failed despite looking successful until the very end</p>
+                        </div>
+                        <div class="familiar-item">
+                            <span class="familiar-icon">🤐</span>
+                            <p>Team members stay quiet about concerns to avoid being "negative"</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <p class="problem-conclusion">
-                    The gap between knowing and saying is where money burns.
-                </p>
+                <!-- Research-Backed Facts -->
+                <div class="research-facts">
+                    <div class="fact-highlight">
+                        <span class="fact-number">Industry research shows:</span>
+                    </div>
+                    
+                    <div class="facts-grid">
+                        <div class="fact-item">
+                            <span class="fact-stat">£2.3M</span>
+                            <span class="fact-description">Average cost of a failed project</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-stat">70%</span>
+                            <span class="fact-description">Projects fail to deliver expected benefits</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-stat">Week 8</span>
+                            <span class="fact-description">When failure indicators typically appear</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-stat">Week 8</span>
+                            <span class="fact-description">When someone on the team usually knows</span>
+                        </div>
+                        <div class="fact-item highlight">
+                            <span class="fact-stat">Week 52</span>
+                            <span class="fact-description">When they finally speak up</span>
+                        </div>
+                    </div>
+                    
+                    <div class="key-insight">
+                        <p class="insight-text">
+                            <strong>The gap between knowing and saying is where money burns.</strong>
+                        </p>
+                        <p class="insight-source">Source: PMI Project Management Institute & Standish Group CHAOS reports</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Solution Section -->
-        <section id="solution" class="solution section-white">
-            <div class="container max-width-900px">
+        <!-- Interactive Three Questions Section -->
+        <section id="solution" class="three-questions">
+            <div class="questions-container">
                 <h2>Three Questions That Change Everything</h2>
-                
-                <p>
+                <p class="section-subtitle">
                     The Reality Check: 30 minutes weekly to surface truth before disaster strikes
                 </p>
                 
-                <!-- Interactive question exploration -->
                 <div class="questions-grid">
-                    
                     <!-- Question 1 -->
-                    <div class="question-card">
+                    <div class="question-card" id="question-1">
                         <div class="question-header" 
                              hx-get="/question-details/1" 
-                             hx-target="#question-1-details"
-                             hx-indicator="#q1-spinner"
-                             style="cursor: pointer; border-left: 6px solid #38a169;">
+                             hx-target="#question-1-content"
+                             hx-swap="innerHTML"
+                             style="cursor: pointer;">
                             
-                            <h3>
-                                Question 1 
-                                <span class="htmx-indicator" id="q1-spinner">Loading...</span>
-                            </h3>
-                            <p style="font-size: 20px; font-weight: 600; color: #2d3748; margin-bottom: 8px;">
-                                "What evidence do we have that someone wants this?"
-                            </p>
-                            <p style="color: #718096;">
-                                Click for examples of good vs bad evidence →
-                            </p>
+                            <div class="question-number">Question 1</div>
+                            <h3 class="question-text">"What evidence do we have that someone wants this?"</h3>
+                            
+                            <div class="question-preview">
+                                <p>Not opinions or assumptions. Actual evidence: customer quotes, usage data, money paid.</p>
+                                <span class="expand-hint">Click for examples of good vs bad evidence →</span>
+                            </div>
                         </div>
                         
-                        <div id="question-1-details" class="question-details" style="display: none;">
-                            <!-- HTMX loads detailed examples here -->
+                        <div id="question-1-content" class="question-content">
+                            <!-- HTMX loads detailed content here -->
                         </div>
                     </div>
                     
                     <!-- Question 2 -->
-                    <div class="question-card">
-                        <div class="question-header" 
+                    <div class="question-card" id="question-2">
+                        <div class="question-header"
                              hx-get="/question-details/2" 
-                             hx-target="#question-2-details"
-                             hx-indicator="#q2-spinner"
-                             style="cursor: pointer; border-left: 6px solid #38a169;">
+                             hx-target="#question-2-content"
+                             hx-swap="innerHTML"
+                             style="cursor: pointer;">
                             
-                            <h3>
-                                Question 2 
-                                <span class="htmx-indicator" id="q2-spinner">Loading...</span>
-                            </h3>
-                            <p style="font-size: 20px; font-weight: 600; color: #2d3748; margin-bottom: 8px;">
-                                "What surprised us this week?"
-                            </p>
-                            <p style="color: #718096;">
-                                Click to see why surprises prevent disasters →
-                            </p>
+                            <div class="question-number">Question 2</div>
+                            <h3 class="question-text">"What surprised us this week?"</h3>
+                            
+                            <div class="question-preview">
+                                <p>If nothing surprised you, you're not learning. Learning prevents disasters.</p>
+                                <span class="expand-hint">Click to see why surprises matter →</span>
+                            </div>
                         </div>
                         
-                        <div id="question-2-details" class="question-details" style="display: none;">
-                            <!-- HTMX loads detailed examples here -->
+                        <div id="question-2-content" class="question-content">
+                            <!-- HTMX loads detailed content here -->
                         </div>
                     </div>
                     
                     <!-- Question 3 -->
-                    <div class="question-card">
-                        <div class="question-header" 
+                    <div class="question-card" id="question-3">
+                        <div class="question-header"
                              hx-get="/question-details/3" 
-                             hx-target="#question-3-details"
-                             hx-indicator="#q3-spinner"
-                             style="cursor: pointer; border-left: 6px solid #38a169;">
+                             hx-target="#question-3-content"
+                             hx-swap="innerHTML"
+                             style="cursor: pointer;">
                             
-                            <h3>
-                                Question 3 
-                                <span class="htmx-indicator" id="q3-spinner">Loading...</span>
-                            </h3>
-                            <p style="font-size: 20px; font-weight: 600; color: #2d3748; margin-bottom: 8px;">
-                                "What are we pretending not to know?"
-                            </p>
-                            <p style="color: #718096;">
-                                Click to understand the psychology of uncomfortable truths →
-                            </p>
+                            <div class="question-number">Question 3</div>
+                            <h3 class="question-text">"What are we pretending not to know?"</h3>
+                            
+                            <div class="question-preview">
+                                <p>The most important question. The silence before someone answers is where truth lives.</p>
+                                <span class="expand-hint">Click to understand the psychology →</span>
+                            </div>
                         </div>
                         
-                        <div id="question-3-details" class="question-details" style="display: none;">
-                            <!-- HTMX loads detailed examples here -->
+                        <div id="question-3-content" class="question-content">
+                            <!-- HTMX loads detailed content here -->
                         </div>
                     </div>
                 </div>
                 
-                <div class="solution-cta">
-                    <a href="/guide.html" class="btn btn-primary">
+                <!-- CTA after questions -->
+                <div class="questions-cta">
+                    <button class="cta-secondary">
                         Get the Complete Methodology
-                    </a>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services section-light">
-            <div class="container max-width-1000px">
-                <h2>Three Ways to Start Reality Check</h2>
+        <!-- Enhanced Services Section -->
+        <section id="services" class="services-section">
+            <div class="services-container">
+                <h2>Three Ways to Stop Project Disasters</h2>
+                <p class="section-subtitle">Choose your level of support to start Reality Checking this Thursday</p>
                 
-                <!-- Service comparison tabs -->
-                <div class="service-tabs">
-                    <button hx-get="/service-details/guide" 
-                            hx-target="#service-content"
-                            hx-indicator="#service-spinner"
-                            class="tab-button active">
-                        Free Guide
-                    </button>
-                    <button hx-get="/service-details/implementation" 
-                            hx-target="#service-content"
-                            hx-indicator="#service-spinner"
-                            class="tab-button">
-                        Implementation
-                    </button>
-                    <button hx-get="/service-details/training" 
-                            hx-target="#service-content"
-                            hx-indicator="#service-spinner"
-                            class="tab-button">
-                        Team Training
-                    </button>
-                </div>
-                
-                <!-- Service content area -->
-                <div id="service-content" class="service-details" style="min-height: 400px;">
-                    <span id="service-spinner" class="htmx-indicator" style="display: block; text-align: center; padding: 50px;">
-                        Loading service details...
-                    </span>
-                    
-                    <!-- Default content for Guide service -->
-                    <div class="service-card" style="background: white; padding: 40px; border-radius: 12px; text-align: center;">
-                        <h3 style="color: #1a202c; margin-bottom: 16px;">The Reality Check Guide</h3>
-                        <p style="font-size: 32px; font-weight: 600; color: #38a169; margin-bottom: 16px;">Free</p>
-                        <p style="color: #2d3748; margin-bottom: 24px;">
-                            Complete 50-page methodology with templates. Start this Thursday.
-                        </p>
-                        
-                        <button hx-post="/download-guide" 
-                                hx-vals='{"guide": "reality-check-methodology", "source": "services"}'
-                                hx-target="#guide-download-result"
-                                hx-indicator="#guide-spinner"
-                                class="btn btn-primary">
-                            <span class="htmx-normal">Download Free Guide</span>
-                            <span class="htmx-indicator" id="guide-spinner">Preparing...</span>
+                <div class="services-tabs">
+                    <!-- Tab Navigation -->
+                    <div class="tab-nav">
+                        <button class="tab-btn active" 
+                                hx-get="/service-details/guide" 
+                                hx-target="#service-content"
+                                data-service="guide">
+                            Free Guide
                         </button>
-                        
-                        <div id="guide-download-result"></div>
+                        <button class="tab-btn" 
+                                hx-get="/service-details/implementation" 
+                                hx-target="#service-content"
+                                data-service="implementation">
+                            Implementation
+                        </button>
+                        <button class="tab-btn" 
+                                hx-get="/service-details/training" 
+                                hx-target="#service-content"
+                                data-service="training">
+                            Team Training
+                        </button>
+                    </div>
+                    
+                    <!-- Service Content -->
+                    <div id="service-content" class="service-content">
+                        <!-- Default: Guide Service -->
+                        <div class="service-card featured">
+                            <div class="service-header">
+                                <h3>The Reality Check Guide</h3>
+                                <div class="service-price">Free</div>
+                                <p class="service-tagline">Start preventing disasters this Thursday</p>
+                            </div>
+                            
+                            <div class="service-details">
+                                <ul class="service-features">
+                                    <li>Complete 50-page methodology guide</li>
+                                    <li>Meeting templates and checklists</li>
+                                    <li>Real case studies and examples</li>
+                                    <li>Implementation timeline</li>
+                                    <li>Success indicators and warning signs</li>
+                                </ul>
+                                
+                                <div class="service-outcome">
+                                    <strong>Outcome:</strong> Your team can start running Reality Checks immediately
+                                </div>
+                            </div>
+                            
+                            <div class="service-cta">
+                                <button class="cta-primary" 
+                                        hx-post="/download-guide" 
+                                        hx-target="#guide-result">
+                                    <span class="cta-text">Download Free Guide</span>
+                                    <span class="cta-subtext">No email required • Instant download</span>
+                                </button>
+                                <div id="guide-result" class="service-feedback"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section-white">
-            <div class="container max-width-800px center-aligned">
+        <!-- Social Proof Section -->
+        <section class="social-proof">
+            <div class="proof-container">
+                <h2>Why This Approach Works</h2>
+                <p class="section-subtitle">
+                    The Reality Check isn't just intuition—it's built on solid research
+                </p>
+                
+                <div class="research-grid">
+                    <div class="research-item">
+                        <div class="research-icon">🔬</div>
+                        <h4>Psychological Safety Research</h4>
+                        <p>Google's Project Aristotle found that teams perform best when members feel safe to voice concerns and take risks.</p>
+                        <span class="research-source">Google, 2016</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <div class="research-icon">🧠</div>
+                        <h4>Behavioural Economics</h4>
+                        <p>Studies show people avoid speaking up about problems due to status quo bias and groupthink—exactly what Reality Check addresses.</p>
+                        <span class="research-source">Kahneman, Tversky</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <div class="research-icon">🎯</div>
+                        <h4>Lean Startup Principles</h4>
+                        <p>Validated learning and rapid feedback loops—the foundation of successful startups—applied to project management.</p>
+                        <span class="research-source">Eric Ries, 2011</span>
+                    </div>
+                    
+                    <div class="research-item">
+                        <div class="research-icon">📊</div>
+                        <h4>Project Failure Analysis</h4>
+                        <p>Post-mortem studies consistently show that warning signs were visible months before project failure.</p>
+                        <span class="research-source">PMI, Standish Group</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
                 <h2>Ready to Stop Project Disasters?</h2>
-                <p>
+                <p class="section-subtitle">
                     Start with the free guide. See the methodology in action. Then decide if you want external support.
                 </p>
                 
-                <!-- Context-aware contact form -->
-                <form hx-post="/contact" 
-                      hx-target="#contact-result" 
-                      hx-indicator="#contact-spinner"
-                      hx-on::after-request="this.reset()"
-                      style="background: #f7fafc; padding: 40px; border-radius: 12px; margin-top: 40px;">
-                    
-                    <!-- Service interest selector -->
-                    <div style="margin-bottom: 24px;">
-                        <label style="display: block; font-weight: 600; margin-bottom: 8px; color: #2d3748;">
-                            What interests you most?
-                        </label>
-                        <select name="service_interest" 
-                                hx-get="/contact-form-fields"
-                                hx-target="#dynamic-fields"
-                                hx-indicator="#fields-spinner"
-                                style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 6px;">
-                            <option value="">Select an option...</option>
-                            <option value="implementation">Implementation Support (£2k/month)</option>
-                            <option value="training">Team Training (£5k one-time)</option>
-                            <option value="general">General Question</option>
-                            <option value="media">Media/Speaking Inquiry</option>
-                        </select>
-                        <span id="fields-spinner" class="htmx-indicator" style="font-size: 14px; color: #718096;">
-                            Loading relevant fields...
-                        </span>
+                <div class="contact-options">
+                    <!-- Primary Option: Guide Download -->
+                    <div class="contact-option primary">
+                        <h3>Start Free</h3>
+                        <p>Download the complete Reality Check methodology and start this Thursday.</p>
+                        <button class="cta-primary">Download Free Guide</button>
                     </div>
                     
-                    <!-- Dynamic fields based on selection -->
-                    <div id="dynamic-fields" class="dynamic-fields">
-                        <!-- HTMX loads relevant fields here -->
+                    <!-- Secondary Option: Discovery Call -->
+                    <div class="contact-option secondary">
+                        <h3>Discuss Your Situation</h3>
+                        <p>15-minute call to understand your specific challenges and how Reality Check can help.</p>
+                        <button class="cta-secondary">Book Discovery Call</button>
                     </div>
-                    
-                    <!-- Standard fields -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-                        <input type="text" 
-                               name="name" 
-                               placeholder="Name" 
-                               required
-                               style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 6px;">
-                        <input type="email" 
-                               name="email" 
-                               placeholder="Email" 
-                               required
-                               style="padding: 12px; border: 2px solid #e2e8f0; border-radius: 6px;">
-                    </div>
-                    
-                    <div style="margin-bottom: 24px;">
-                        <input type="text" 
-                               name="company" 
-                               placeholder="Company (optional)"
-                               style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 6px;">
-                    </div>
-                    
-                    <div style="margin-bottom: 24px;">
-                        <textarea name="message" 
-                                  placeholder="What are you pretending not to know about your current projects?"
-                                  rows="4"
-                                  style="width: 100%; padding: 12px; border: 2px solid #e2e8f0; border-radius: 6px; resize: vertical;"></textarea>
-                    </div>
-                    
-                    <!-- Smart submit button -->
-                    <button type="submit" 
-                            style="width: 100%; background: #3182ce; color: white; padding: 16px; border-radius: 6px; font-size: 18px; font-weight: 600;">
-                        <span class="htmx-normal">Send Message</span>
-                        <span class="htmx-indicator" id="contact-spinner">
-                            <svg width="20" height="20" fill="currentColor" class="animate-spin inline" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM2.04 4.326A.5.5 0 0 0 1 4.5v7a.5.5 0 0 0 .854.354l2.5-2.5A.5.5 0 0 0 4 8.5V6.707l6.646 6.647a.5.5 0 0 0 .708-.708L4.707 6H6.5a.5.5 0 0 0 .354-.146L9.354 3.354A.5.5 0 0 0 9 3H2a.5.5 0 0 0-.04.326z"/>
-                            </svg>
-                            Sending...
-                        </span>
-                    </button>
-                    
-                    <!-- Contact result -->
-                    <div id="contact-result" style="margin-top: 20px;"></div>
-                </form>
-                
-                <!-- Quick booking options -->
-                <div class="quick-booking">
-                    <button hx-post="/quick-book" 
-                            hx-vals='{"type": "discovery"}'
-                            hx-target="#booking-result"
-                            hx-indicator="#discovery-spinner"
-                            class="booking-button">
-                        <span class="htmx-normal">📅 Book Discovery Call</span>
-                        <span class="htmx-indicator" id="discovery-spinner">Booking...</span>
-                    </button>
-                    
-                    <button hx-post="/quick-book" 
-                            hx-vals='{"type": "training"}'
-                            hx-target="#booking-result"
-                            hx-indicator="#training-spinner"
-                            class="booking-button secondary">
-                        <span class="htmx-normal">🎯 Book Training Session</span>
-                        <span class="htmx-indicator" id="training-spinner">Booking...</span>
-                    </button>
                 </div>
                 
-                <div id="booking-result" style="margin-top: 20px;"></div>
+                <!-- Contact Form with Smart Fields -->
+                <div class="contact-form-container">
+                    <form class="contact-form" 
+                          hx-post="/contact" 
+                          hx-target="#contact-result"
+                          hx-indicator="#contact-spinner">
+                        
+                        <div class="form-header">
+                            <h3>What are you pretending not to know?</h3>
+                            <p>Tell us about your current project challenges</p>
+                        </div>
+                        
+                        <!-- Smart Interest Selection -->
+                        <div class="form-group">
+                            <label>What interests you most?</label>
+                            <select name="interest" 
+                                    hx-get="/contact-form-fields" 
+                                    hx-target="#dynamic-fields">
+                                <option value="">Select an option...</option>
+                                <option value="implementation">Implementation Support (£2k/month)</option>
+                                <option value="training">Team Training (£5k one-time)</option>
+                                <option value="methodology">Understanding the methodology better</option>
+                                <option value="case-study">Specific project challenge</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Dynamic Fields -->
+                        <div id="dynamic-fields"></div>
+                        
+                        <!-- Standard Fields -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" name="company" placeholder="Company (optional)">
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea name="challenge" 
+                                      placeholder="What project challenges are you facing? What concerns do you have that you haven't voiced yet?"
+                                      rows="4"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-submit">
+                            <span class="htmx-normal">Send Message</span>
+                            <span class="htmx-indicator" id="contact-spinner">Sending...</span>
+                        </button>
+                        
+                        <div id="contact-result" class="form-result"></div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -730,7 +685,7 @@
         document.body.addEventListener('htmx:beforeRequest', function(evt) {
             if (evt.detail.pathInfo.requestPath.includes('/service-details/')) {
                 // Update active tab
-                document.querySelectorAll('.tab-button').forEach(btn => {
+                document.querySelectorAll('.tab-btn').forEach(btn => {
                     btn.classList.remove('active');
                 });
                 evt.detail.elt.classList.add('active');

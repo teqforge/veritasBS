@@ -1,4 +1,4 @@
-// ===== VERITAS BS - CLEAN JAVASCRIPT =====
+// ===== VERITAS BS - ENHANCED JAVASCRIPT =====
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,6 +11,8 @@ function initializeApp() {
     setupSmoothScrolling();
     setupAccessibility();
     setupMicrointeractions();
+    setupInteractiveElements();
+    setupPerformanceMonitoring();
 }
 
 // ===== NAVIGATION =====
@@ -133,10 +135,84 @@ function setupAccessibility() {
     });
 }
 
+// ===== INTERACTIVE ELEMENTS =====
+function setupInteractiveElements() {
+    // Question card interactions
+    const questionHeaders = document.querySelectorAll('.question-header');
+    questionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isExpanded = content.classList.contains('show');
+            
+            // Close all other question contents
+            document.querySelectorAll('.question-content').forEach(content => {
+                content.classList.remove('show');
+            });
+            
+            // Toggle current content
+            if (!isExpanded) {
+                content.classList.add('show');
+            }
+        });
+    });
+    
+    // Service tab interactions
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all tabs
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked tab
+            this.classList.add('active');
+        });
+    });
+    
+    // Stat item hover effects
+    const statItems = document.querySelectorAll('.stat-item');
+    statItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            // Add visual feedback
+            this.style.transform = 'scale(1.05)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
+    
+    // Familiar item interactions
+    const familiarItems = document.querySelectorAll('.familiar-item');
+    familiarItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-2px)';
+            this.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+        });
+    });
+    
+    // Research item interactions
+    const researchItems = document.querySelectorAll('.research-item');
+    researchItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-4px)';
+            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+        });
+    });
+}
+
 // ===== MICROINTERACTIONS =====
 function setupMicrointeractions() {
     // Button hover effects
-    const buttons = document.querySelectorAll('.btn');
+    const buttons = document.querySelectorAll('.btn, .cta-primary, .cta-secondary');
     buttons.forEach(btn => {
         btn.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-2px)';
@@ -148,14 +224,28 @@ function setupMicrointeractions() {
     });
     
     // Card hover effects
-    const cards = document.querySelectorAll('.service-card, .question-card');
+    const cards = document.querySelectorAll('.service-card, .question-card, .contact-option');
     cards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-4px)';
+            this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.05)';
+        });
+    });
+    
+    // Form field focus effects
+    const formFields = document.querySelectorAll('input, textarea, select');
+    formFields.forEach(field => {
+        field.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'scale(1.02)';
+        });
+        
+        field.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'scale(1)';
         });
     });
     
@@ -206,10 +296,74 @@ function setupPerformanceMonitoring() {
             startTime = Date.now();
         }
     });
+    
+    // Track scroll depth
+    let maxScrollDepth = 0;
+    window.addEventListener('scroll', function() {
+        const scrollDepth = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        if (scrollDepth > maxScrollDepth) {
+            maxScrollDepth = scrollDepth;
+            if (maxScrollDepth % 25 === 0) { // Track at 25%, 50%, 75%, 100%
+                trackEvent('scroll_depth', { depth: maxScrollDepth });
+            }
+        }
+    });
 }
 
-// Initialize performance monitoring
-setupPerformanceMonitoring();
+// ===== HTMX ENHANCEMENTS =====
+
+// Global HTMX event handlers
+document.addEventListener('htmx:afterRequest', function(evt) {
+    // Handle question detail toggles
+    if (evt.detail.pathInfo.requestPath.includes('/question-details/')) {
+        const target = evt.detail.target;
+        if (target.style.display === 'none') {
+            target.style.display = 'block';
+        }
+        target.classList.add('show');
+        
+        // Track question interaction
+        const questionId = evt.detail.pathInfo.requestPath.split('/').pop();
+        trackEvent('question_expanded', { question_id: questionId });
+    }
+    
+    // Handle service tab switching
+    if (evt.detail.pathInfo.requestPath.includes('/service-details/')) {
+        const serviceType = evt.detail.pathInfo.requestPath.split('/').pop();
+        trackEvent('service_tab_clicked', { service_type: serviceType });
+    }
+    
+    // Handle stat detail hover
+    if (evt.detail.pathInfo.requestPath.includes('/stat-detail/')) {
+        const statType = evt.detail.pathInfo.requestPath.split('/').pop();
+        trackEvent('stat_hovered', { stat_type: statType });
+    }
+    
+    // Handle successful form submissions
+    if (evt.detail.xhr.status === 200 && evt.detail.pathInfo.requestPath.includes('/contact')) {
+        trackEvent('contact_form_submitted', { success: true });
+    }
+    
+    // Handle successful downloads
+    if (evt.detail.xhr.status === 200 && evt.detail.pathInfo.requestPath.includes('/download-guide')) {
+        trackEvent('guide_downloaded', { success: true });
+    }
+});
+
+// Handle HTMX errors
+document.addEventListener('htmx:responseError', function(evt) {
+    console.log('HTMX Error:', evt.detail);
+    
+    // Show user-friendly error message
+    const errorMessage = '<div style="background: #fed7d7; border: 1px solid #feb2b2; color: #c53030; padding: 12px; border-radius: 6px; margin-top: 8px;">Something went wrong. Please try again.</div>';
+    evt.detail.target.innerHTML = errorMessage;
+    
+    // Track error
+    trackEvent('htmx_error', {
+        path: evt.detail.pathInfo.requestPath,
+        status: evt.detail.xhr.status
+    });
+});
 
 // ===== ERROR HANDLING =====
 window.addEventListener('error', function(e) {
@@ -225,6 +379,7 @@ window.addEventListener('error', function(e) {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         initializeApp,
-        trackEvent
+        trackEvent,
+        setupInteractiveElements
     };
 } 

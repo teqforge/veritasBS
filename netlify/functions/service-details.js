@@ -1,161 +1,157 @@
 exports.handler = async function(event, context) {
-  // Only allow GET
-  if (event.httpMethod !== 'GET') {
-    return { 
-      statusCode: 405, 
-      headers: { 'Content-Type': 'text/html' },
-      body: '<p style="color: #e53e3e;">Method Not Allowed</p>' 
-    };
-  }
-
-  try {
-    // Extract service type from path
-    const pathParts = event.path.split('/');
-    const serviceType = pathParts[pathParts.length - 1];
-
-    // Service content database
-    const serviceDetails = {
-      'guide': `
-        <div class="service-card" style="background: white; padding: 40px; border-radius: 12px; text-align: center;">
-          <h3 style="color: #1a202c; margin-bottom: 16px;">The Reality Check Guide</h3>
-          <p style="font-size: 32px; font-weight: 600; color: #38a169; margin-bottom: 16px;">Free</p>
-          <p style="color: #2d3748; margin-bottom: 24px;">
-            Complete 50-page methodology with templates. Start this Thursday.
-          </p>
-          
-          <ul style="list-style: none; color: #2d3748; margin-bottom: 32px; text-align: left; max-width: 300px; margin-left: auto; margin-right: auto;">
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              50-page implementation guide
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              Meeting templates
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              Success indicators
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              Warning signs
-            </li>
-          </ul>
-          
-          <button hx-post="/download-guide" 
-                  hx-vals='{"guide": "reality-check-methodology", "source": "services"}'
-                  hx-target="#guide-download-result"
-                  hx-indicator="#guide-spinner"
-                  class="btn btn-primary">
-            <span class="htmx-normal">Download Free Guide</span>
-            <span class="htmx-indicator" id="guide-spinner">Preparing...</span>
-          </button>
-          
-          <div id="guide-download-result"></div>
-        </div>
-      `,
-      'implementation': `
-        <div class="service-card" style="background: white; padding: 40px; border-radius: 12px; text-align: center;">
-          <h3 style="color: #1a202c; margin-bottom: 16px;">Implementation Support</h3>
-          <p style="font-size: 32px; font-weight: 600; color: #38a169; margin-bottom: 16px;">£2,000/month</p>
-          <p style="color: #2d3748; margin-bottom: 24px;">
-            We facilitate your first 12 Reality Check sessions. External voice, honest questions.
-          </p>
-          
-          <ul style="list-style: none; color: #2d3748; margin-bottom: 32px; text-align: left; max-width: 300px; margin-left: auto; margin-right: auto;">
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              12 facilitated sessions
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              3-month minimum
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              External facilitation
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              30-day guarantee
-            </li>
-          </ul>
-          
-          <button hx-post="/quick-book" 
-                  hx-vals='{"type": "discovery"}'
-                  hx-target="#implementation-booking-result"
-                  hx-indicator="#implementation-spinner"
-                  class="btn btn-secondary">
-            <span class="htmx-normal">Book Discovery Call</span>
-            <span class="htmx-indicator" id="implementation-spinner">Booking...</span>
-          </button>
-          
-          <div id="implementation-booking-result"></div>
-        </div>
-      `,
-      'training': `
-        <div class="service-card" style="background: white; padding: 40px; border-radius: 12px; text-align: center;">
-          <h3 style="color: #1a202c; margin-bottom: 16px;">Team Training</h3>
-          <p style="font-size: 32px; font-weight: 600; color: #38a169; margin-bottom: 16px;">£5,000</p>
-          <p style="color: #2d3748; margin-bottom: 24px;">
-            Half-day workshop training your team to run Reality Checks independently.
-          </p>
-          
-          <ul style="list-style: none; color: #2d3748; margin-bottom: 32px; text-align: left; max-width: 300px; margin-left: auto; margin-right: auto;">
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              Half-day workshop
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              Train internal facilitators
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              6 weeks email support
-            </li>
-            <li style="margin-bottom: 8px; padding-left: 20px; position: relative;">
-              <span style="color: #38a169; position: absolute; left: 0; font-weight: bold;">✓</span>
-              All materials included
-            </li>
-          </ul>
-          
-          <button hx-post="/quick-book" 
-                  hx-vals='{"type": "training"}'
-                  hx-target="#training-booking-result"
-                  hx-indicator="#training-booking-spinner"
-                  class="btn btn-outline">
-            <span class="htmx-normal">Book Training</span>
-            <span class="htmx-indicator" id="training-booking-spinner">Booking...</span>
-          </button>
-          
-          <div id="training-booking-result"></div>
-        </div>
-      `
+    // CORS headers
+    const headers = {
+        'Content-Type': 'text/html',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE'
     };
 
-    const serviceContent = serviceDetails[serviceType];
-    
-    if (!serviceContent) {
-      return {
-        statusCode: 404,
-        headers: { 'Content-Type': 'text/html' },
-        body: '<p style="color: #e53e3e;">Service not found.</p>'
-      };
+    // Handle preflight requests
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 200,
+            headers,
+            body: ''
+        };
     }
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'text/html' },
-      body: serviceContent
-    };
-
-  } catch (error) {
-    console.error('Error serving service details:', error);
-    return {
-      statusCode: 500,
-      headers: { 'Content-Type': 'text/html' },
-      body: '<p style="color: #e53e3e; text-align: center;">Something went wrong. Please try again.</p>'
-    };
-  }
+    try {
+        const serviceType = event.queryStringParameters?.service || event.path.split('/').pop();
+        
+        let content = '';
+        
+        switch(serviceType) {
+            case 'guide':
+                content = `
+                    <div class="service-card featured">
+                        <div class="service-header">
+                            <h3>The Reality Check Guide</h3>
+                            <div class="service-price">Free</div>
+                            <p class="service-tagline">Start preventing disasters this Thursday</p>
+                        </div>
+                        
+                        <div class="service-details">
+                            <ul class="service-features">
+                                <li>Complete 50-page methodology guide</li>
+                                <li>Meeting templates and checklists</li>
+                                <li>Real case studies and examples</li>
+                                <li>Implementation timeline</li>
+                                <li>Success indicators and warning signs</li>
+                            </ul>
+                            
+                            <div class="service-outcome">
+                                <strong>Outcome:</strong> Your team can start running Reality Checks immediately
+                            </div>
+                        </div>
+                        
+                        <div class="service-cta">
+                            <button class="cta-primary" 
+                                    hx-post="/download-guide" 
+                                    hx-target="#guide-result">
+                                <span class="cta-text">Download Free Guide</span>
+                                <span class="cta-subtext">No email required • Instant download</span>
+                            </button>
+                            <div id="guide-result" class="service-feedback"></div>
+                        </div>
+                    </div>
+                `;
+                break;
+                
+            case 'implementation':
+                content = `
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Implementation Support</h3>
+                            <div class="service-price">£2,000<span style="font-size: 16px; font-weight: 400;">/month</span></div>
+                            <p class="service-tagline">External facilitation for systematic truth-telling</p>
+                        </div>
+                        
+                        <div class="service-details">
+                            <ul class="service-features">
+                                <li>We facilitate your first 12 Reality Check sessions</li>
+                                <li>External voice asks what your team won't</li>
+                                <li>3-month minimum commitment</li>
+                                <li>Weekly 30-minute sessions</li>
+                                <li>Implementation guidance and templates</li>
+                            </ul>
+                            
+                            <div class="service-outcome">
+                                <strong>Outcome:</strong> Methodology embedded with external facilitation to ensure honesty
+                            </div>
+                            
+                            <div class="service-guarantee">
+                                <strong>Guarantee:</strong> If no valuable truths surface in first month, we refund and help you understand why
+                            </div>
+                        </div>
+                        
+                        <div class="service-cta">
+                            <button class="cta-secondary" 
+                                    hx-post="/contact" 
+                                    hx-target="#contact-result"
+                                    hx-vals='{"interest": "implementation"}'>
+                                Book Discovery Call
+                            </button>
+                        </div>
+                    </div>
+                `;
+                break;
+                
+            case 'training':
+                content = `
+                    <div class="service-card">
+                        <div class="service-header">
+                            <h3>Team Training</h3>
+                            <div class="service-price">£5,000<span style="font-size: 16px; font-weight: 400;"> one-time</span></div>
+                            <p class="service-tagline">Build psychological safety and truth-telling culture</p>
+                        </div>
+                        
+                        <div class="service-details">
+                            <ul class="service-features">
+                                <li>2-day intensive workshop for your team</li>
+                                <li>Practice sessions with real scenarios</li>
+                                <li>Psychological safety assessment</li>
+                                <li>Custom templates for your industry</li>
+                                <li>6 months of email support</li>
+                            </ul>
+                            
+                            <div class="service-outcome">
+                                <strong>Outcome:</strong> Team develops the skills and confidence to surface uncomfortable truths
+                            </div>
+                            
+                            <div class="service-guarantee">
+                                <strong>Guarantee:</strong> If your team doesn't feel more comfortable speaking up after training, we'll work with you until they do
+                            </div>
+                        </div>
+                        
+                        <div class="service-cta">
+                            <button class="cta-secondary" 
+                                    hx-post="/contact" 
+                                    hx-target="#contact-result"
+                                    hx-vals='{"interest": "training"}'>
+                                Book Training Session
+                            </button>
+                        </div>
+                    </div>
+                `;
+                break;
+                
+            default:
+                content = '<p>Service details not found.</p>';
+        }
+        
+        return {
+            statusCode: 200,
+            headers,
+            body: content
+        };
+        
+    } catch (error) {
+        console.error('Error:', error);
+        return {
+            statusCode: 500,
+            headers,
+            body: '<p>Error loading service details.</p>'
+        };
+    }
 }; 
