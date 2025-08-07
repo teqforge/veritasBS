@@ -190,7 +190,7 @@ async function sendPDFEmail(email, source) {
     attachments: [
       {
         filename: 'Reality-Check-Methodology-Guide.pdf',
-        path: './web/assets/Reality_Check_Guide_Veritas_BS.pdf'
+        path: './web/THEREALITYCHECK.pdf'
       }
     ]
   };
