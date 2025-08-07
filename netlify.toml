@@ -72,6 +72,10 @@
 [build.processing]
   skip_processing = false
 
+# Install function dependencies
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
+
 # Headers for security and performance
 [[headers]]
   for = "/*"

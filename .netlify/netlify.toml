@@ -183,6 +183,18 @@ force = false
 [redirects.headers]
 
 [[redirects]]
+from = "/admin/leads"
+to = "/.netlify/functions/view-leads"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200.0
