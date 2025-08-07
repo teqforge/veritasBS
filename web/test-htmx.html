@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX Test Page | Veritas BS</title>
+    
+    <!-- HTMX Core -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/style.css">
+    
+    <style>
+        .test-section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+        }
+        
+        .test-result {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 6px;
+            min-height: 20px;
+        }
+        
+        .success {
+            background: #f0fff4;
+            border: 1px solid #38a169;
+            color: #2d3748;
+        }
+        
+        .error {
+            background: #fed7d7;
+            border: 1px solid #e53e3e;
+            color: #2d3748;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+        <h1>HTMX Functionality Test</h1>
+        <p>This page tests all the HTMX endpoints to ensure they're working correctly.</p>
+        
+        <!-- Download Guide Test -->
+        <div class="test-section">
+            <h3>1. Download Guide Test</h3>
+            <button hx-post="/download-guide" 
+                    hx-vals='{"guide": "test", "source": "test"}'
+                    hx-target="#download-test-result"
+                    hx-indicator="#download-test-spinner"
+                    class="btn btn-primary">
+                <span class="htmx-normal">Test Download Guide</span>
+                <span class="htmx-indicator" id="download-test-spinner">Testing...</span>
+            </button>
+            <div id="download-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Newsletter Test -->
+        <div class="test-section">
+            <h3>2. Newsletter Signup Test</h3>
+            <form hx-post="/newsletter" 
+                  hx-target="#newsletter-test-result" 
+                  hx-indicator="#newsletter-test-spinner">
+                <input type="email" 
+                       name="email" 
+                       placeholder="test@example.com"
+                       value="test@example.com"
+                       style="padding: 8px; margin-right: 8px; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <button type="submit" class="btn btn-secondary">
+                    <span class="htmx-normal">Test Newsletter</span>
+                    <span class="htmx-indicator" id="newsletter-test-spinner">Testing...</span>
+                </button>
+            </form>
+            <div id="newsletter-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Question Details Test -->
+        <div class="test-section">
+            <h3>3. Question Details Test</h3>
+            <button hx-get="/question-details/1" 
+                    hx-target="#question-test-result"
+                    hx-indicator="#question-test-spinner"
+                    class="btn btn-primary">
+                <span class="htmx-normal">Test Question Details</span>
+                <span class="htmx-indicator" id="question-test-spinner">Testing...</span>
+            </button>
+            <div id="question-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Service Details Test -->
+        <div class="test-section">
+            <h3>4. Service Details Test</h3>
+            <button hx-get="/service-details/implementation" 
+                    hx-target="#service-test-result"
+                    hx-indicator="#service-test-spinner"
+                    class="btn btn-primary">
+                <span class="htmx-normal">Test Service Details</span>
+                <span class="htmx-indicator" id="service-test-spinner">Testing...</span>
+            </button>
+            <div id="service-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Stat Detail Test -->
+        <div class="test-section">
+            <h3>5. Stat Detail Test</h3>
+            <button hx-get="/stat-detail/failure-cost" 
+                    hx-target="#stat-test-result"
+                    hx-indicator="#stat-test-spinner"
+                    class="btn btn-primary">
+                <span class="htmx-normal">Test Stat Details</span>
+                <span class="htmx-indicator" id="stat-test-spinner">Testing...</span>
+            </button>
+            <div id="stat-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Quick Book Test -->
+        <div class="test-section">
+            <h3>6. Quick Book Test</h3>
+            <button hx-post="/quick-book" 
+                    hx-vals='{"type": "discovery"}'
+                    hx-target="#booking-test-result"
+                    hx-indicator="#booking-test-spinner"
+                    class="btn btn-primary">
+                <span class="htmx-normal">Test Quick Booking</span>
+                <span class="htmx-indicator" id="booking-test-spinner">Testing...</span>
+            </button>
+            <div id="booking-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Contact Form Fields Test -->
+        <div class="test-section">
+            <h3>7. Dynamic Form Fields Test</h3>
+            <button hx-get="/contact-form-fields?service_interest=implementation" 
+                    hx-target="#fields-test-result"
+                    hx-indicator="#fields-test-spinner"
+                    class="btn btn-primary">
+                <span class="htmx-normal">Test Dynamic Fields</span>
+                <span class="htmx-indicator" id="fields-test-spinner">Testing...</span>
+            </button>
+            <div id="fields-test-result" class="test-result"></div>
+        </div>
+        
+        <!-- Contact Form Test -->
+        <div class="test-section">
+            <h3>8. Contact Form Test</h3>
+            <form hx-post="/contact" 
+                  hx-target="#contact-test-result" 
+                  hx-indicator="#contact-test-spinner">
+                <input type="text" 
+                       name="name" 
+                       placeholder="Test Name"
+                       value="Test User"
+                       style="padding: 8px; margin: 4px; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <input type="email" 
+                       name="email" 
+                       placeholder="test@example.com"
+                       value="test@example.com"
+                       style="padding: 8px; margin: 4px; border: 1px solid #e2e8f0; border-radius: 4px;">
+                <textarea name="message" 
+                          placeholder="Test message"
+                          style="padding: 8px; margin: 4px; border: 1px solid #e2e8f0; border-radius: 4px; width: 100%;"
+                          rows="3">This is a test message for HTMX functionality.</textarea>
+                <button type="submit" class="btn btn-secondary">
+                    <span class="htmx-normal">Test Contact Form</span>
+                    <span class="htmx-indicator" id="contact-test-spinner">Testing...</span>
+                </button>
+            </form>
+            <div id="contact-test-result" class="test-result"></div>
+        </div>
+        
+        <div style="margin-top: 40px; padding: 20px; background: #f7fafc; border-radius: 8px;">
+            <h3>Test Results Summary</h3>
+            <p>All tests should show success messages if the HTMX endpoints are working correctly.</p>
+            <p>If any test fails, check the browser console for error details.</p>
+        </div>
+    </div>
+    
+    <script>
+        // Track test results
+        document.body.addEventListener('htmx:afterRequest', function(evt) {
+            const target = evt.detail.target;
+            if (evt.detail.xhr.status === 200) {
+                target.classList.add('success');
+                target.classList.remove('error');
+            } else {
+                target.classList.add('error');
+                target.classList.remove('success');
+            }
+        });
+    </script>
+</body>
+</html> 
