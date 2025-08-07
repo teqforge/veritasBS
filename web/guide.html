@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/style.css">
@@ -61,10 +61,10 @@
                 </div>
                 
                 <ul class="nav-menu" role="menubar">
-                    <li role="none"><a href="/#about" class="nav-link" role="menuitem">About</a></li>
+                    <li role="none"><a href="/" class="nav-link" role="menuitem">Home</a></li>
+                    <li role="none"><a href="/about.html" class="nav-link" role="menuitem">About</a></li>
                     <li role="none"><a href="/#services" class="nav-link" role="menuitem">Services</a></li>
-                    <li role="none"><a href="/#testimonials" class="nav-link" role="menuitem">Results</a></li>
-                    <li role="none"><a href="/#contact" class="nav-link" role="menuitem">Contact</a></li>
+                    <li role="none"><a href="/#contact" class="nav-link nav-cta" role="menuitem">Contact</a></li>
                 </ul>
                 
                 <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
@@ -78,342 +78,151 @@
 
     <main id="main-content" role="main">
         <!-- Guide Hero -->
-        <section class="hero guide-hero" aria-labelledby="guide-title">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span>📚 Free Download</span>
+        <section class="hero section-white" aria-labelledby="guide-title">
+            <div class="container center-aligned">
+                <h1 id="guide-title">
+                    Get Your Reality Check Guide
+                </h1>
+                
+                <p>
+                    50 pages of actionable frameworks to transform how you make decisions. No fluff, just practical tools you can use immediately.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">50</div>
+                        <div class="stat-label">Pages</div>
                     </div>
-                    <h1 id="guide-title" class="hero-title">Get Your Reality Check Guide</h1>
-                    <p class="hero-subtitle">50 pages of actionable frameworks to transform how you make decisions. No fluff, just practical tools you can use immediately.</p>
-                    
-                    <div class="guide-stats">
-                        <div class="stat">
-                            <div class="stat-number">50</div>
-                            <div class="stat-label">Pages</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">12</div>
-                            <div class="stat-label">Frameworks</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">0</div>
-                            <div class="stat-label">Cost</div>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Frameworks</div>
                     </div>
-                    
-                    <div class="hero-note">
-                        <strong>What you'll learn:</strong> Decision frameworks, misinformation detection, cognitive bias recognition, and data analysis tools.
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="guide-preview">
-                        <div class="preview-header">
-                            <div class="preview-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="preview-content">
-                            <h3>Reality Check Guide</h3>
-                            <p>Transform your decision-making with evidence-based frameworks and practical tools.</p>
-                            <div class="preview-pages">
-                                <span>📊 Executive Summary</span>
-                                <span>🎯 Decision Frameworks</span>
-                                <span>🛡️ Misinformation Detection</span>
-                                <span>🧠 Cognitive Bias Recognition</span>
-                                <span>📈 Data Analysis Tools</span>
-                                <span>✅ Implementation Checklist</span>
-                            </div>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Spam</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Download Form Section -->
-        <section class="download-form-section">
-            <div class="container">
-                <div class="form-container">
-                    <div class="form-header">
-                        <h2>Download Your Free Guide</h2>
-                        <p>Enter your details below to get instant access to the Reality Check Guide. We'll never share your information.</p>
-                    </div>
-                    
-                    <form name="pdf-signup" method="POST" data-netlify="true" action="/thank-you.html" class="guide-form">
-                        <input type="hidden" name="form-name" value="pdf-signup" />
-                        
-                        <div class="form-group">
-                            <label for="name" class="form-label">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                            <div id="name-error" class="form-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                            <div id="email-error" class="form-error"></div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company" class="form-label">Company (Optional)</label>
-                            <input type="text" id="company" name="company" placeholder="Your company name">
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="newsletter" id="newsletter">
-                                <span class="checkmark"></span>
-                                Send me weekly reality checks and decision-making tips
-                            </label>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="privacy" id="privacy" required>
-                                <span class="checkmark"></span>
-                                I agree to the <a href="/privacy/" target="_blank">Privacy Policy</a> and consent to being contacted about Veritas BS services
-                            </label>
-                            <div id="privacy-error" class="form-error"></div>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-large">
-                            <span class="btn-icon">📥</span>
-                            Download Reality Check Guide
-                        </button>
-                        
-                        <p class="form-note">
-                            <strong>What happens next:</strong> You'll be redirected to a thank-you page where you can download the PDF immediately. We'll also send you a confirmation email with the download link.
-                        </p>
-                        
-                        <div class="direct-download">
-                            <p><strong>Can't wait?</strong> <a href="/assets/Reality_Check_Guide_Veritas_BS.pdf" download>Download the guide directly</a> (no email required)</p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Guide Features -->
-        <section class="guide-features">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">What's Inside the Guide</h2>
-                    <p class="section-subtitle">50 pages of practical frameworks and tools to transform your decision-making</p>
+        <section class="section-light">
+            <div class="container max-width-800px">
+                <h2>Download Your Free Guide</h2>
+                <p>
+                    Enter your email to get instant access to the complete Reality Check methodology. No spam, no sales calls, just the guide.
+                </p>
+                
+                <div class="problem-list">
+                    <ul>
+                        <li>Complete methodology with templates</li>
+                        <li>Meeting facilitation guides</li>
+                        <li>Success indicators and warning signs</li>
+                        <li>Implementation checklist</li>
+                        <li>Start running Reality Checks this Thursday</li>
+                    </ul>
                 </div>
                 
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">📊</div>
-                        <h3>Executive Summary</h3>
-                        <p>Quick overview of the key concepts and how to apply them immediately.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🎯</div>
-                        <h3>Decision Frameworks</h3>
-                        <p>12 proven frameworks for making better decisions under uncertainty.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
-                        <h3>Misinformation Detection</h3>
-                        <p>Learn to spot fake news, biased sources, and misleading data.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">🧠</div>
-                        <h3>Cognitive Bias Recognition</h3>
-                        <p>Identify and overcome the 20 most common decision-making biases.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">📈</div>
-                        <h3>Data Analysis Tools</h3>
-                        <p>Simple tools to evaluate evidence and make data-driven decisions.</p>
-                    </div>
-                    
-                    <div class="feature-card">
-                        <div class="feature-icon">✅</div>
-                        <h3>Implementation Checklist</h3>
-                        <p>Step-by-step guide to applying these frameworks in your daily decisions.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Proof -->
-        <section class="social-proof">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Trusted by Decision Makers</h2>
-                    <p class="section-subtitle">Join thousands of professionals who have transformed their decision-making</p>
-                </div>
-                
-                <div class="testimonials-grid">
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"The Reality Check Guide completely changed how I evaluate information. I've avoided several costly mistakes thanks to these frameworks."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">SM</div>
-                            <div class="author-info">
-                                <div class="author-name">Sarah Mitchell</div>
-                                <div class="author-title">CTO, TechStart Inc.</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"Finally, a practical guide that doesn't just tell you what to do, but shows you exactly how to do it. Game-changer for our team."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">DJ</div>
-                            <div class="author-info">
-                                <div class="author-name">David Johnson</div>
-                                <div class="author-title">VP Strategy, GlobalCorp</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial">
-                        <div class="testimonial-content">
-                            <p>"I've read dozens of books on decision-making, but this guide is the only one I actually use every day. Highly recommended."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AL</div>
-                            <div class="author-info">
-                                <div class="author-name">Amanda Lee</div>
-                                <div class="author-title">Founder, DataFlow Analytics</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Frequently Asked Questions</h2>
-                </div>
-                
-                <div class="faq-grid">
-                    <div class="faq-item">
-                        <h3>Is the guide really free?</h3>
-                        <p>Yes, completely free. No hidden costs, no upsells, no strings attached. We believe everyone deserves access to better decision-making tools.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>What format is the guide in?</h3>
-                        <p>The guide is a high-quality PDF that you can read on any device. It's optimized for both screen reading and printing.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Will you spam my email?</h3>
-                        <p>Absolutely not. We only send you the guide and occasional valuable insights. You can unsubscribe anytime with one click.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>How long does it take to read?</h3>
-                        <p>The guide is designed to be practical, not academic. You can read it in 2-3 hours, but you'll reference it for years to come.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>Can I share it with my team?</h3>
-                        <p>Yes! We encourage you to share the guide with colleagues. Better decision-making benefits everyone.</p>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <h3>What if I need more help?</h3>
-                        <p>After reading the guide, you can book a Reality Audit session for personalized guidance on applying these frameworks to your specific challenges.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready to Transform Your Decision-Making?</h2>
-                    <p>Join thousands of professionals who have already downloaded the Reality Check Guide and are making better decisions every day.</p>
-                    <a href="#download-form" class="btn btn-primary btn-large">
-                        <span class="btn-icon">📥</span>
-                        Get Your Free Guide Now
+                <div class="solution-cta">
+                    <a href="/assets/Reality_Check_Guide_Veritas_BS.pdf" class="btn btn-primary" download>
+                        Download Guide Now
                     </a>
-                    <p class="cta-note">No credit card required • Instant download • 50 pages of actionable content</p>
                 </div>
+                
+                <p style="text-align: center; margin-top: 24px; color: var(--primary-light); font-size: 14px;">
+                    By downloading, you agree to receive occasional updates about The Reality Check methodology. Unsubscribe anytime.
+                </p>
+            </div>
+        </section>
+
+        <!-- What's Inside Section -->
+        <section class="section-white">
+            <div class="container max-width-900px">
+                <h2>What's Inside the Guide</h2>
+                
+                <div class="questions-grid">
+                    <div class="question-card">
+                        <h3>The Three Questions</h3>
+                        <p>Complete breakdown of each question with examples and facilitation tips.</p>
+                        <p>Learn how to ask them safely and get honest answers.</p>
+                    </div>
+                    
+                    <div class="question-card">
+                        <h3>Meeting Templates</h3>
+                        <p>Ready-to-use templates for your first Reality Check sessions.</p>
+                        <p>Agendas, time allocations, and follow-up formats.</p>
+                    </div>
+                    
+                    <div class="question-card">
+                        <h3>Success Indicators</h3>
+                        <p>How to know if your Reality Checks are working.</p>
+                        <p>Warning signs that indicate you need to adjust your approach.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section class="section-light">
+            <div class="container max-width-800px center-aligned">
+                <h2>Ready to Start?</h2>
+                <p>
+                    Download the guide, read it, and start running Reality Checks this Thursday. Then decide if you want external support.
+                </p>
+                <a href="/assets/Reality_Check_Guide_Veritas_BS.pdf" class="btn btn-primary" download>
+                    Get Started Today
+                </a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="/assets/logo.svg" alt="Veritas BS" class="footer-logo-img" width="32" height="32">
-                        <span class="footer-logo-text">Veritas BS</span>
-                    </div>
-                    <p class="footer-tagline">Truth before disaster</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/assets/logo.svg" alt="Veritas BS Logo" width="40" height="40">
                 </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="/#services">Reality Audits</a></li>
-                            <li><a href="/#guide">Free Guide</a></li>
-                            <li><a href="/#contact">Corporate Training</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Resources</h3>
-                        <ul>
-                            <li><a href="/case-studies/">Case Studies</a></li>
-                            <li><a href="/blog/">Blog</a></li>
-                            <li><a href="/guide.html">Guide</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="/#about">About</a></li>
-                            <li><a href="/#contact">Contact</a></li>
-                            <li><a href="/privacy/">Privacy</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-tagline">
+                    Preventing project disasters through organised honesty before it's too late.
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    <p>&copy; 2024 Veritas BS. All rights reserved.</p>
-                    <p>Veritas Business Solutions (trading as Veritas BS)</p>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/guide.html">Free Guide</a></li>
+                        <li><a href="/#services">Implementation Support</a></li>
+                        <li><a href="/#services">Team Training</a></li>
+                    </ul>
                 </div>
-                <div class="footer-badges">
-                    <span class="badge">Built with AI</span>
-                    <span class="badge">Made in UK</span>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/case-studies/">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Veritas BS. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Cookie Notice -->
-    <div id="cookie-notice" class="cookie-notice" role="alert" aria-live="polite">
-        <div class="cookie-content">
-            <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
-            <div class="cookie-actions">
-                <button id="accept-cookies" class="btn btn-primary btn-small">Accept</button>
-                <button id="reject-cookies" class="btn btn-outline btn-small">Reject</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script src="/assets/script.js"></script>
 </body>
 </html> 

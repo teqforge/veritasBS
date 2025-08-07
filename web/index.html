@@ -33,7 +33,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/style.css">
@@ -51,10 +51,7 @@
             "@type": "ContactPoint",
             "email": "reality@veritasbs.co.uk",
             "contactType": "customer service"
-        },
-        "sameAs": [
-            "https://github.com/teqforge/veritasBS"
-        ]
+        }
     }
     </script>
 </head>
@@ -76,10 +73,9 @@
                 <ul class="nav-menu" role="menubar">
                     <li role="none"><a href="#problem" class="nav-link" role="menuitem">The Problem</a></li>
                     <li role="none"><a href="#solution" class="nav-link" role="menuitem">The Solution</a></li>
-                    <li role="none"><a href="#proof" class="nav-link" role="menuitem">Case Studies</a></li>
+                    <li role="none"><a href="#services" class="nav-link" role="menuitem">Services</a></li>
                     <li role="none"><a href="/about.html" class="nav-link" role="menuitem">About</a></li>
-                    <li role="none"><a href="#services" class="nav-link nav-cta" role="menuitem">Services</a></li>
-                    <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+                    <li role="none"><a href="#contact" class="nav-link nav-cta" role="menuitem">Contact</a></li>
                 </ul>
                 
                 <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
@@ -93,423 +89,216 @@
 
     <main id="main-content" role="main">
         <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <span>Reality Check Methodology</span>
+        <section class="hero section-white" aria-labelledby="hero-title">
+            <div class="container center-aligned">
+                <h1 id="hero-title">
+                    Most Failed Projects Had Someone Who Knew They'd Fail
+                </h1>
+                
+                <p>
+                    The Reality Check: 30 minutes weekly to surface uncomfortable truths before they cost millions
+                </p>
+                
+                <a href="/guide.html" class="btn btn-primary">
+                    Download Free Methodology Guide
+                </a>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">£2.3M</div>
+                        <div class="stat-label">Average project failure cost</div>
                     </div>
-                    <h1 id="hero-title" class="hero-title">Most Failed Projects Had Someone Who Knew They'd Fail</h1>
-                    <p class="hero-subtitle">The Reality Check: A 30-minute weekly meeting designed to surface uncomfortable truths before they become expensive disasters</p>
-                    
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Questions</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">30</div>
-                            <div class="stat-label">Minutes</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">Every</div>
-                            <div class="stat-label">Thursday</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">Zero</div>
-                            <div class="stat-label">BS</div>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">Projects that fail</div>
                     </div>
-                    
-                    <div class="hero-buttons">
-                        <a href="/guide.html" class="btn btn-primary btn-large">
-                            Download Free Methodology Guide
-                        </a>
-                        <a href="#problem" class="btn btn-outline">See How It Works</a>
-                    </div>
-                    
-                    <p class="hero-note">No email required • Complete methodology guide • Start this Thursday</p>
-                </div>
-                <div class="hero-visual">
-                    <div class="hero-card">
-                        <div class="card-header">
-                            <div class="card-avatar">
-                                <span>RC</span>
-                            </div>
-                            <div class="card-info">
-                                <h3>Reality Check</h3>
-                                <p>Weekly meeting</p>
-                            </div>
-                        </div>
-                        <div class="feature-list">
-                            <div class="feature-item">What evidence do we have that someone wants this?</div>
-                            <div class="feature-item">What surprised us this week?</div>
-                            <div class="feature-item">What are we pretending not to know?</div>
-                        </div>
+                    <div class="stat">
+                        <div class="stat-number">Week 8</div>
+                        <div class="stat-label">When someone knows</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Problem Section -->
-        <section id="problem" class="problem" aria-labelledby="problem-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="problem-title" class="section-title">The £2.3M Question Everyone's Afraid to Ask</h2>
-                    <p class="section-subtitle">Industry research shows the real cost of project failure.</p>
+        <section id="problem" class="problem section-light">
+            <div class="container max-width-800px">
+                <h2>The £2.3M Question Everyone's Afraid to Ask</h2>
+                
+                <div class="problem-list">
+                    <ul>
+                        <li>Average cost of a failed project: £2.3M</li>
+                        <li>70% of projects fail to deliver expected benefits</li>
+                        <li>Most failure indicators appear by week 8</li>
+                        <li>Someone on the team usually knows by week 8</li>
+                        <li><strong>They rarely speak up until it's too late</strong></li>
+                    </ul>
                 </div>
-                <div class="problem-content">
-                    <div class="problem-text">
-                        <p class="lead">Every week, companies waste millions building things nobody wants while someone on their team knows it will fail but can't say it.</p>
-                        
-                        <p>Industry research shows:</p>
-                        <ul class="problem-list">
-                            <li>Average cost of a failed project: £2.3M</li>
-                            <li>70% of projects fail to deliver expected benefits</li>
-                            <li>Most failure indicators appear by week 8</li>
-                            <li>Someone on the team usually knows by week 8</li>
-                            <li>They rarely speak up until it's too late</li>
-                        </ul>
-                        
-                        <div class="failure-timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-month">Week 8</div>
-                                <div class="timeline-quote">"Someone knows but won't say"</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">Month 6</div>
-                                <div class="timeline-quote">"Why is adoption so low?"</div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-month">Month 12</div>
-                                <div class="timeline-quote">"Let's pivot to something else"</div>
-                            </div>
-                        </div>
-                        
-                        <div class="problem-stats">
-                            <div class="stat-card">
-                                <div class="stat-number">£2.3M</div>
-                                <div class="stat-label">Average Cost</div>
-                                <div class="stat-description">per failed project</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">70%</div>
-                                <div class="stat-label">Failure Rate</div>
-                                <div class="stat-description">of projects</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">Week 8</div>
-                                <div class="stat-label">When Truth</div>
-                                <div class="stat-description">becomes clear</div>
-                            </div>
-                        </div>
-                        
-                        <p class="problem-conclusion">The gap between knowing and saying is where money burns.</p>
-                        <p class="problem-source"><em>Based on PMI Project Management Institute research and Standish Group CHAOS reports</em></p>
-                    </div>
-                </div>
+                
+                <p class="problem-conclusion">
+                    The gap between knowing and saying is where money burns.
+                </p>
             </div>
         </section>
 
         <!-- Solution Section -->
-        <section id="solution" class="solution" aria-labelledby="solution-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="solution-title" class="section-title">What If There Was a Meeting That Made Truth Safe?</h2>
-                    <p class="section-subtitle">The Reality Check: Three questions that cut through denial, politics, and wishful thinking</p>
-                </div>
-                <div class="solution-content">
-                    <div class="questions-grid">
-                        <div class="question-card">
-                            <div class="question-number">1</div>
-                            <h3>What evidence do we have that someone wants this?</h3>
-                            <p>Forces you to prove demand exists before building anything. Most projects fail here.</p>
-                        </div>
-                        <div class="question-card">
-                            <div class="question-number">2</div>
-                            <h3>What surprised us this week?</h3>
-                            <p>Surfaces the uncomfortable truths your team is avoiding. This is where disasters are prevented.</p>
-                        </div>
-                        <div class="question-card">
-                            <div class="question-number">3</div>
-                            <h3>What are we pretending not to know?</h3>
-                            <p>Gets to the heart of organisational denial. The most powerful question of all.</p>
-                        </div>
+        <section id="solution" class="solution section-white">
+            <div class="container max-width-900px">
+                <h2>Three Questions That Change Everything</h2>
+                
+                <p>
+                    The Reality Check: 30 minutes weekly to surface truth before disaster strikes
+                </p>
+                
+                <div class="questions-grid">
+                    <div class="question-card">
+                        <h3>Question 1</h3>
+                        <p>"What evidence do we have that someone wants this?"</p>
+                        <p>Not opinions, assumptions, or research. Actual evidence: customer quotes, usage data, money paid.</p>
                     </div>
                     
-                    <div class="solution-cta">
-                        <a href="/guide.html" class="btn btn-primary btn-large">
-                            Get the Complete Methodology
-                        </a>
-                        <p class="solution-note">Complete methodology guide with implementation templates</p>
+                    <div class="question-card">
+                        <h3>Question 2</h3>
+                        <p>"What surprised us this week?"</p>
+                        <p>If nothing surprised you, you're not learning. Learning prevents disasters.</p>
+                    </div>
+                    
+                    <div class="question-card">
+                        <h3>Question 3</h3>
+                        <p>"What are we pretending not to know?"</p>
+                        <p>The most important question. The silence before someone answers is where truth lives.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Potential Impact Section -->
-        <section id="proof" class="proof" aria-labelledby="proof-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="proof-title" class="section-title">Projects That Could Have Been Saved</h2>
-                    <p class="section-subtitle">Real project disasters that fit the pattern The Reality Check is designed to prevent</p>
-                </div>
-                <div class="proof-grid">
-                    <article class="proof-card">
-                        <div class="proof-header">
-                            <h3>Quibi - $1.75B Failure</h3>
-                            <div class="proof-savings">$1.75B Lost</div>
-                        </div>
-                        <div class="proof-content">
-                            <div class="proof-quote">
-                                <p>"Nobody wanted 10-minute premium content. The team likely knew by week 8."</p>
-                            </div>
-                            <div class="proof-result">
-                                <p><strong>Reality Check would have surfaced:</strong> "What evidence do we have that someone wants this?"</p>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="proof-card">
-                        <div class="proof-header">
-                            <h3>Google+ - $500M+ Failure</h3>
-                            <div class="proof-savings">$500M+ Lost</div>
-                        </div>
-                        <div class="proof-content">
-                            <div class="proof-quote">
-                                <p>"Internal teams knew Facebook had won. They stayed silent for years."</p>
-                            </div>
-                            <div class="proof-result">
-                                <p><strong>Reality Check would have surfaced:</strong> "What are we pretending not to know?"</p>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <article class="proof-card">
-                        <div class="proof-header">
-                            <h3>Microsoft Zune - Market Failure</h3>
-                            <div class="proof-savings">Millions Lost</div>
-                        </div>
-                        <div class="proof-content">
-                            <div class="proof-quote">
-                                <p>"The team knew iPod was too far ahead. They built it anyway."</p>
-                            </div>
-                            <div class="proof-result">
-                                <p><strong>Reality Check would have surfaced:</strong> "What surprised us this week?"</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="proof-disclaimer">
-                    <p><em>These are public case studies used to illustrate methodology potential. We have not worked with these organisations.</em></p>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Methodology Validation Section -->
-        <section id="validation" class="validation" aria-labelledby="validation-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="validation-title" class="section-title">Why We Believe This Works</h2>
-                    <p class="section-subtitle">The Reality Check isn't just another meeting. It's based on solid research.</p>
-                </div>
-                <div class="validation-content">
-                    <div class="validation-text">
-                        <p class="lead">The Reality Check isn't just another meeting. It's based on:</p>
-                        <ul class="validation-list">
-                            <li><strong>Psychological safety research</strong> (Google's Project Aristotle)</li>
-                            <li><strong>Behavioural economics</strong> (why people don't speak up)</li>
-                            <li><strong>Lean startup principles</strong> (validated learning)</li>
-                            <li><strong>Post-mortem analysis</strong> of failed projects</li>
-                        </ul>
-                        <p>We've studied why projects fail and designed a simple intervention to address the root causes.</p>
-                    </div>
+                
+                <div class="solution-cta">
+                    <a href="/guide.html" class="btn btn-primary">
+                        Get the Complete Methodology
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="services" aria-labelledby="services-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="services-title" class="section-title">Three Ways to Start Reality Check</h2>
-                    <p class="section-subtitle">Choose the level of support you need</p>
-                </div>
+        <section id="services" class="services section-light">
+            <div class="container max-width-1000px">
+                <h2>Three Ways to Start Reality Check</h2>
+                
                 <div class="services-grid">
-                    <article class="service-card">
-                        <div class="service-icon">G</div>
+                    <div class="service-card">
                         <h3>The Reality Check Guide</h3>
                         <div class="service-price">Free</div>
-                        <p>Complete methodology guide with implementation templates.</p>
+                        <p>
+                            Complete methodology with templates. Start running Reality Checks this Thursday.
+                        </p>
                         <ul class="service-features">
-                            <li>Full methodology</li>
-                            <li>Implementation templates</li>
-                            <li>Start immediately</li>
+                            <li>50-page implementation guide</li>
+                            <li>Meeting templates</li>
+                            <li>Success indicators</li>
+                            <li>Warning signs</li>
                         </ul>
-                        <a href="/guide.html" class="btn btn-outline">Download Guide</a>
-                    </article>
-                    <article class="service-card featured">
-                        <div class="service-badge">Most Popular</div>
-                        <div class="service-icon">C</div>
+                        <a href="/guide.html" class="btn btn-primary">
+                            Download Guide
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
                         <h3>Implementation Support</h3>
                         <div class="service-price">£2,000/month</div>
-                        <p>We facilitate your first 12 Reality Check sessions.</p>
+                        <p>
+                            We facilitate your first 12 Reality Check sessions. External voice, honest questions.
+                        </p>
                         <ul class="service-features">
-                            <li>External facilitation</li>
+                            <li>12 facilitated sessions</li>
                             <li>3-month minimum</li>
-                            <li>Guarantee: If no valuable truths surface in first month, we refund</li>
+                            <li>External facilitation</li>
+                            <li>30-day guarantee</li>
                         </ul>
-                        <a href="#contact" class="btn btn-primary">Book Discovery Call</a>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon">A</div>
+                        <a href="mailto:reality@veritasbs.co.uk?subject=Implementation Support Inquiry" class="btn btn-secondary">
+                            Book Discovery Call
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
                         <h3>Team Training</h3>
-                        <div class="service-price">£5,000 one-time</div>
-                        <p>Half-day workshop training your team to run Reality Checks.</p>
+                        <div class="service-price">£5,000</div>
+                        <p>
+                            Half-day workshop training your team to run Reality Checks independently.
+                        </p>
                         <ul class="service-features">
-                            <li>Workshop training</li>
+                            <li>Half-day workshop</li>
+                            <li>Train internal facilitators</li>
                             <li>6 weeks email support</li>
-                            <li>Internal capability</li>
+                            <li>All materials included</li>
                         </ul>
-                        <a href="#contact" class="btn btn-outline">Book Training Session</a>
-                    </article>
+                        <a href="mailto:reality@veritasbs.co.uk?subject=Team Training Inquiry" class="btn btn-outline">
+                            Book Training
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <div class="container">
-                <div class="section-header">
-                    <h2 id="contact-title" class="section-title">Ready to Start Being Honest?</h2>
-                    <p class="section-subtitle">Let's discuss how The Reality Check can prevent your next project disaster</p>
-                </div>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <h3>Book a Discovery Call</h3>
-                            <p>We're new, but we're not experimenting on you. This methodology is built on solid research and we stand behind it.</p>
-                            <div class="contact-details">
-                                <div class="contact-item">
-                                    <span class="contact-icon">Email</span>
-                                    <a href="mailto:reality@veritasbs.co.uk">reality@veritasbs.co.uk</a>
-                                </div>
-                                <div class="contact-item">
-                                    <span class="contact-icon">Web</span>
-                                    <a href="https://veritasbs.co.uk">veritasbs.co.uk</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form action="/submit" method="POST" class="form" data-netlify="true" name="contact">
-                            <input type="hidden" name="form-name" value="contact">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Full Name *</label>
-                                <input type="text" id="name" name="name" required aria-describedby="name-error">
-                                <div id="name-error" class="form-error" role="alert"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="form-label">Email Address *</label>
-                                <input type="email" id="email" name="email" required aria-describedby="email-error">
-                                <div id="email-error" class="form-error" role="alert"></div>
-                            </div>
-                            <div class="form-group">
-                                <label for="company" class="form-label">Company</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            <div class="form-group">
-                                <label for="service" class="form-label">Which service interests you? *</label>
-                                <select id="service" name="service" required>
-                                    <option value="">Select a service</option>
-                                    <option value="guide">Reality Check Guide (Free)</option>
-                                    <option value="implementation">Implementation Support (£2,000/month)</option>
-                                    <option value="training">Team Training (£5,000)</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" class="form-label">What are you pretending not to know? (Optional)</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Tell us about your project challenges..."></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" name="newsletter" value="yes">
-                                    <span class="checkmark"></span>
-                                    Send me Reality Check insights (optional)
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-large">
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
+        <section id="contact" class="section-white">
+            <div class="container max-width-800px center-aligned">
+                <h2>Ready to Stop Project Disasters?</h2>
+                <p>
+                    Start with the free guide. See the methodology in action. Then decide if you want external support.
+                </p>
+                <a href="/guide.html" class="btn btn-primary">
+                    Get Started Today
+                </a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <img src="/assets/logo.svg" alt="Veritas BS" class="footer-logo-img" width="32" height="32">
-                        <span class="footer-logo-text">Veritas BS</span>
-                    </div>
-                    <p class="footer-tagline">Business Solutions. We Kill the Other Kind.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="/assets/logo.svg" alt="Veritas BS Logo" width="40" height="40">
                 </div>
-                <div class="footer-links">
-                    <div class="footer-section">
-                        <h3>Services</h3>
-                        <ul>
-                            <li><a href="/guide.html">Reality Check Guide</a></li>
-                            <li><a href="#services">Implementation Support</a></li>
-                            <li><a href="#services">Team Training</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Resources</h3>
-                        <ul>
-                            <li><a href="/case-studies/">Case Studies</a></li>
-                            <li><a href="/blog/">Blog</a></li>
-                            <li><a href="/guide.html">Methodology</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-section">
-                        <h3>Company</h3>
-                        <ul>
-                            <li><a href="/about.html">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="/privacy.html">Privacy</a></li>
-                        </ul>
-                    </div>
+                <div class="footer-tagline">
+                    Preventing project disasters through organised honesty before it's too late.
                 </div>
             </div>
-            <div class="footer-bottom">
-                <div class="footer-legal">
-                    <p>&copy; 2024 Veritas BS. All rights reserved.</p>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="/guide.html">Free Guide</a></li>
+                        <li><a href="#services">Implementation Support</a></li>
+                        <li><a href="#services">Team Training</a></li>
+                    </ul>
                 </div>
-                <div class="footer-badges">
-                    <span class="badge">Made with honesty</span>
+                
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/case-studies/">Case Studies</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Veritas BS. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Cookie Notice -->
-    <div id="cookie-notice" class="cookie-notice" role="alert" aria-live="polite">
-        <div class="cookie-content">
-            <p>We use cookies to improve your experience. By continuing to use this site, you agree to our use of cookies.</p>
-            <div class="cookie-actions">
-                <button id="accept-cookies" class="btn btn-primary btn-small">Accept</button>
-                <button id="reject-cookies" class="btn btn-outline btn-small">Reject</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scripts -->
+    <!-- JavaScript -->
     <script src="/assets/script.js"></script>
 </body>
 </html> 
