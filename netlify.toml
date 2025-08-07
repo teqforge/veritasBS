@@ -7,6 +7,9 @@
   
   # Default build command
   command = ""
+  
+  # Functions directory
+  functions = "netlify/functions"
 
 # Redirects for SPA routing (if needed)
 [[redirects]]

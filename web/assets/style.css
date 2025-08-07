@@ -1771,6 +1771,31 @@ section {
     line-height: 1.5;
 }
 
+.direct-download {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fef3c7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.direct-download p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #92400e;
+}
+
+.direct-download a {
+    color: #d97706;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.direct-download a:hover {
+    color: #b45309;
+}
+
 /* Guide Features Section */
 .guide-features {
     padding: 4rem 0;
