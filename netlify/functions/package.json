@@ -4,6 +4,7 @@
   "description": "Netlify functions for Veritas BS",
   "main": "index.js",
   "dependencies": {
-    "nodemailer": "^6.9.1"
+    "nodemailer": "^6.9.1",
+    "pg": "^8.11.3"
   }
 } 

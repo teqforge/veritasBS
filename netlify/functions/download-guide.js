@@ -53,18 +53,19 @@ exports.handler = async function(event, context) {
     };
 
     try {
-      // Store lead (you can integrate with your CRM here)
-      console.log('New lead captured:', { 
-        ...leadData,
-        timestamp: new Date().toISOString()
+      // Store lead in database
+      const response = await fetch(`${process.env.URL || 'https://veritasbs.co.uk'}/.netlify/functions/store-lead`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(leadData)
       });
       
-      // Optional: Call store-lead function for additional processing
-      // const response = await fetch('/.netlify/functions/store-lead', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(leadData)
-      // });
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Lead stored successfully:', result);
+      } else {
+        console.error('Failed to store lead:', response.status);
+      }
     } catch (leadError) {
       console.error('Error storing lead:', leadError);
       // Continue with email sending even if lead storage fails

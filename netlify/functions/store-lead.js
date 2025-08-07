@@ -1,3 +1,5 @@
+const { Pool } = require('pg');
+
 exports.handler = async function(event, context) {
   // Only allow POST
   if (event.httpMethod !== 'POST') {
@@ -31,34 +33,63 @@ exports.handler = async function(event, context) {
       };
     }
 
-    // Store the lead (this is where you'd integrate with your CRM)
-    const lead = {
-      email,
-      source,
-      guide: guide || 'reality-check-methodology',
-      ip: ip || 'unknown',
-      timestamp: new Date().toISOString(),
-      status: 'new'
-    };
+    // Connect to PostgreSQL database
+    const pool = new Pool({
+      connectionString: process.env.NETLIFY_DATABASE_URL,
+      ssl: { rejectUnauthorized: false }
+    });
 
-    // Log the lead (replace this with your CRM integration)
-    console.log('New lead captured:', lead);
+    try {
+      // Create leads table if it doesn't exist
+      await pool.query(`
+        CREATE TABLE IF NOT EXISTS leads (
+          id SERIAL PRIMARY KEY,
+          email VARCHAR(255) UNIQUE NOT NULL,
+          source VARCHAR(100) NOT NULL,
+          guide VARCHAR(100) DEFAULT 'reality-check-methodology',
+          ip VARCHAR(45),
+          status VARCHAR(50) DEFAULT 'new',
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+      `);
 
-    // Here you would typically:
-    // 1. Save to database (Airtable, Notion, etc.)
-    // 2. Add to email list (Mailchimp, ConvertKit, etc.)
-    // 3. Send to CRM (HubSpot, Salesforce, etc.)
-    // 4. Trigger follow-up sequences
+      // Insert or update lead
+      const result = await pool.query(`
+        INSERT INTO leads (email, source, guide, ip, status)
+        VALUES ($1, $2, $3, $4, $5)
+        ON CONFLICT (email) 
+        DO UPDATE SET 
+          source = EXCLUDED.source,
+          guide = EXCLUDED.guide,
+          ip = EXCLUDED.ip,
+          updated_at = CURRENT_TIMESTAMP
+        RETURNING id, email, source, created_at
+      `, [email, source, guide || 'reality-check-methodology', ip || 'unknown', 'new']);
 
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        success: true, 
-        message: 'Lead captured successfully',
-        leadId: Date.now().toString() // Simple ID for tracking
-      })
-    };
+      const lead = result.rows[0];
+
+      console.log('Lead stored in database:', {
+        id: lead.id,
+        email: lead.email,
+        source: lead.source,
+        created_at: lead.created_at
+      });
+
+      return {
+        statusCode: 200,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          success: true, 
+          message: 'Lead captured successfully',
+          leadId: lead.id,
+          email: lead.email
+        })
+      };
+
+    } finally {
+      await pool.end();
+    }
 
   } catch (error) {
     console.error('Error storing lead:', error);

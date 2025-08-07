@@ -171,6 +171,18 @@ force = false
 [redirects.headers]
 
 [[redirects]]
+from = "/store-lead"
+to = "/.netlify/functions/store-lead"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200.0

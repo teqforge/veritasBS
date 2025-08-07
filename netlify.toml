@@ -57,6 +57,11 @@
   to = "/.netlify/functions/store-lead"
   status = 200
 
+[[redirects]]
+  from = "/admin/leads"
+  to = "/.netlify/functions/view-leads"
+  status = 200
+
 # Redirects for SPA routing (if needed)
 [[redirects]]
   from = "/*"
