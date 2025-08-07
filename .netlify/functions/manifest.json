@@ -1,0 +1,1 @@
+{"functions":[{"bundler":"zisi","buildData":{"runtimeAPIVersion":1},"mainFile":"/Users/chrisrobertson/veritasBS/netlify/functions/send-pdf-email.js","name":"send-pdf-email","priority":10,"path":"/Users/chrisrobertson/veritasBS/.netlify/functions/send-pdf-email.zip","runtime":"js"}],"system":{"arch":"arm64","platform":"darwin"},"timestamp":1754565721851,"version":1}
