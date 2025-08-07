@@ -1,0 +1,10 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="35" fill="#1B4D3E"/>
+  <circle cx="40" cy="40" r="32" fill="none" stroke="#D4AF37" stroke-width="3"/>
+  <path d="M28 40 L35 47 L52 30" stroke="#FAFAFA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Subtle V in bottom -->
+  <text x="40" y="65" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="700" fill="#FAFAFA" text-anchor="middle">
+    V
+  </text>
+</svg> 

@@ -24,9 +24,17 @@
     <meta property="twitter:description" content="£47M wasted on projects nobody wanted. We stopped it with three questions.">
     <meta property="twitter:image" content="https://veritasbs.co.uk/og-image.jpg">
     
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <!-- Favicon Implementation -->
+    <link rel="icon" type="image/svg+xml" href="/assets/favicons/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#1B4D3E">
+    
+    <!-- Preload critical logo assets -->
+    <link rel="preload" href="/assets/logos/svg/veritas-horizontal.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/assets/logos/svg/veritas-stacked.svg" as="image" type="image/svg+xml">
     
     <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,9 +241,18 @@
         <nav class="nav" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="/" aria-label="Veritas BS Homepage">
-                        <img src="/assets/logo.svg" alt="Veritas BS Logo" class="logo-img" width="40" height="40">
-                        <span class="logo-text">Veritas BS</span>
+                    <a href="/" class="logo-link" aria-label="Veritas BS - Home">
+                        <!-- Desktop: Horizontal logo -->
+                        <img src="/assets/logos/svg/veritas-horizontal.svg" 
+                             alt="Veritas BS - Business Solutions" 
+                             class="logo logo-horizontal"
+                             width="250" height="67">
+                        
+                        <!-- Mobile: Stacked logo -->
+                        <img src="/assets/logos/svg/veritas-stacked.svg" 
+                             alt="Veritas BS" 
+                             class="logo logo-stacked"
+                             width="80" height="93">
                     </a>
                 </div>
                 
@@ -628,9 +645,11 @@
     <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <div class="footer-brand">
-                <div class="footer-logo">
-                    <img src="/assets/logo.svg" alt="Veritas BS Logo" width="40" height="40">
-                </div>
+                <!-- Footer logo - text only version -->
+                <img src="/assets/logos/svg/veritas-text-only.svg" 
+                     alt="Veritas BS" 
+                     class="footer-logo"
+                     width="120" height="45">
                 <div class="footer-tagline">
                     Preventing project disasters through organised honesty before it's too late.
                 </div>
