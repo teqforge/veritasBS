@@ -9,7 +9,18 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const formData = JSON.parse(event.body);
+    let formData = {};
+    
+    // Handle different content types
+    if (event.headers['content-type'] && event.headers['content-type'].includes('application/json')) {
+      // JSON data
+      formData = JSON.parse(event.body);
+    } else {
+      // Form data - parse URL encoded or multipart
+      const querystring = require('querystring');
+      formData = querystring.parse(event.body);
+    }
+
     const { guide, source } = formData;
 
     // Track the download (you can add analytics here)
@@ -41,9 +52,9 @@ exports.handler = async function(event, context) {
   } catch (error) {
     console.error('Error processing download:', error);
     return {
-      statusCode: 500,
+      statusCode: 400,
       headers: { 'Content-Type': 'text/html' },
-      body: '<p style="color: #e53e3e; text-align: center;">Something went wrong. Please try again.</p>'
+      body: '<p style="color: #e53e3e; text-align: center;">Invalid request format. Please try again.</p>'
     };
   }
 }; 

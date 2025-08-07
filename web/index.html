@@ -207,10 +207,14 @@
                 
                 <!-- Primary CTA -->
                 <div class="hero-cta">
-                    <button class="cta-primary" hx-post="/download-guide" hx-target="#download-result">
-                        <span class="cta-text">Get the Complete Reality Check Guide</span>
-                        <span class="cta-subtext">Free • 50 pages • Start This Thursday</span>
-                    </button>
+                    <form hx-post="/download-guide" hx-target="#download-result" style="display: inline;">
+                        <input type="hidden" name="guide" value="reality-check-methodology">
+                        <input type="hidden" name="source" value="hero-cta">
+                        <button type="submit" class="cta-primary">
+                            <span class="cta-text">Get the Complete Reality Check Guide</span>
+                            <span class="cta-subtext">Free • 50 pages • Start This Thursday</span>
+                        </button>
+                    </form>
                     <div id="download-result" class="download-feedback"></div>
                 </div>
                 
@@ -460,12 +464,14 @@
                             </div>
                             
                             <div class="service-cta">
-                                <button class="cta-primary" 
-                                        hx-post="/download-guide" 
-                                        hx-target="#guide-result">
-                                    <span class="cta-text">Download Free Guide</span>
-                                    <span class="cta-subtext">No email required • Instant download</span>
-                                </button>
+                                <form hx-post="/download-guide" hx-target="#guide-result" style="display: inline;">
+                                    <input type="hidden" name="guide" value="reality-check-methodology">
+                                    <input type="hidden" name="source" value="service-card">
+                                    <button type="submit" class="cta-primary">
+                                        <span class="cta-text">Download Free Guide</span>
+                                        <span class="cta-subtext">No email required • Instant download</span>
+                                    </button>
+                                </form>
                                 <div id="guide-result" class="service-feedback"></div>
                             </div>
                         </div>
@@ -567,7 +573,12 @@
                     <div class="contact-option primary">
                         <h3>Start Free</h3>
                         <p>Download the complete Reality Check methodology and start this Thursday.</p>
-                        <button class="cta-primary">Download Free Guide</button>
+                        <form hx-post="/download-guide" hx-target="#contact-download-result" style="display: inline;">
+                            <input type="hidden" name="guide" value="reality-check-methodology">
+                            <input type="hidden" name="source" value="contact-section">
+                            <button type="submit" class="cta-primary">Download Free Guide</button>
+                        </form>
+                        <div id="contact-download-result" class="download-feedback"></div>
                     </div>
                     
                     <!-- Secondary Option: Discovery Call -->
@@ -697,13 +708,6 @@
         htmx.config.defaultSwapStyle = 'innerHTML';
         htmx.config.defaultSwapDelay = 100;
         htmx.config.defaultSettleDelay = 200;
-        
-        // Custom error handling
-        document.body.addEventListener('htmx:responseError', function(evt) {
-            console.log('HTMX Error:', evt.detail);
-            // Show user-friendly error message
-            evt.target.innerHTML = '<p style="color: #e53e3e; text-align: center;">Something went wrong. Please try again.</p>';
-        });
         
         // Track HTMX events for analytics
         document.body.addEventListener('htmx:afterRequest', function(evt) {
