@@ -493,6 +493,205 @@ section {
     line-height: 1.6;
 }
 
+/* ===== PROBLEM SECTION ===== */
+.problem {
+    background: #f8fafc;
+    padding: 6rem 0;
+}
+
+.problem-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.problem-text {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.failure-timeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.timeline-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.timeline-month {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #dc2626;
+    margin-bottom: 1rem;
+}
+
+.timeline-quote {
+    font-style: italic;
+    color: #64748b;
+    font-size: 1rem;
+}
+
+.problem-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.problem-conclusion {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #dc2626;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* ===== SOLUTION SECTION ===== */
+.solution {
+    background: white;
+    padding: 6rem 0;
+}
+
+.solution-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.questions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.question-card {
+    background: #f8fafc;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.question-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: #3b82f6;
+}
+
+.question-number {
+    width: 3rem;
+    height: 3rem;
+    background: #3b82f6;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.question-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.question-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.solution-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.solution-note {
+    margin-top: 1rem;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* ===== PROOF SECTION ===== */
+.proof {
+    background: #f8fafc;
+    padding: 6rem 0;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.proof-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.proof-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.proof-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.proof-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.proof-savings {
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.proof-quote {
+    background: #f1f5f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid #3b82f6;
+}
+
+.proof-quote p {
+    font-style: italic;
+    color: #374151;
+    margin: 0;
+}
+
+.proof-result {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
 /* ===== ABOUT SECTION ===== */
 .about {
     background: #ffffff;
@@ -651,8 +850,15 @@ section {
 .service-card h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #0f172a;
+}
+
+.service-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 1rem;
 }
 
 .service-card p {
@@ -1268,6 +1474,25 @@ section {
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .failure-timeline {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .questions-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .problem-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .proof-grid {
+        grid-template-columns: 1fr;
     }
     
     .services-grid {
