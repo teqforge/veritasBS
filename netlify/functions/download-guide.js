@@ -74,7 +74,7 @@ exports.handler = async function(event, context) {
       <div style="background: #f0fff4; border: 2px solid #38a169; border-radius: 8px; padding: 20px; color: #2d3748; text-align: center;">
         <h4 style="color: #38a169; margin-bottom: 12px;">✅ Guide Ready!</h4>
         <p style="margin-bottom: 12px;">Your email has been captured and the guide is ready for download.</p>
-        <a href="/THEREALITYCHECK.pdf" 
+        <a href="/assets/THEREALITYCHECK.pdf" 
            download="Reality-Check-Methodology-Guide.pdf"
            style="display: inline-block; background: #38a169; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 16px 0; font-weight: 600;">
           📥 Download Guide Now
