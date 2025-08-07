@@ -52,6 +52,11 @@
   to = "/.netlify/functions/contact-form-fields"
   status = 200
 
+[[redirects]]
+  from = "/store-lead"
+  to = "/.netlify/functions/store-lead"
+  status = 200
+
 # Redirects for SPA routing (if needed)
 [[redirects]]
   from = "/*"

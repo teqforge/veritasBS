@@ -46,12 +46,16 @@ exports.handler = async function(event, context) {
                         </div>
                         
                         <div class="service-cta">
-                            <form hx-post="/download-guide" hx-target="#guide-result" style="display: inline;">
+                            <form hx-post="/download-guide" hx-target="#guide-result" class="download-form">
                                 <input type="hidden" name="guide" value="reality-check-methodology">
                                 <input type="hidden" name="source" value="service-details">
+                                <div class="email-input-group">
+                                    <input type="email" name="email" placeholder="Enter your email address" required 
+                                           style="width: 100%; padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 6px; margin-bottom: 12px; font-size: 16px;">
+                                </div>
                                 <button type="submit" class="cta-primary">
                                     <span class="cta-text">Download Free Guide</span>
-                                    <span class="cta-subtext">No email required • Instant download</span>
+                                    <span class="cta-subtext">Free • Delivered to your inbox</span>
                                 </button>
                             </form>
                             <div id="guide-result" class="service-feedback"></div>
