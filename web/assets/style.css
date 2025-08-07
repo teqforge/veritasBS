@@ -52,7 +52,7 @@ body {
     position: absolute;
     top: -40px;
     left: 6px;
-    background: var(--primary-dark);
+    background: var(--accent-blue);
     color: var(--bg-white);
     padding: 8px;
     text-decoration: none;
@@ -295,7 +295,7 @@ p {
 }
 
 .stat-label {
-    color: var(--primary-light);
+    color: var(--primary-text);
     font-size: 16px;
 }
 
@@ -457,7 +457,7 @@ section {
 .question-card p:last-child {
     font-size: 18px;
     font-weight: 400;
-    color: var(--primary-light);
+    color: var(--primary-text);
     text-align: left;
 }
 
@@ -512,7 +512,7 @@ section {
 
 .service-features {
     list-style: none;
-    color: var(--primary-light);
+    color: var(--primary-text);
     margin-bottom: 32px;
     text-align: left;
 }
@@ -537,8 +537,8 @@ section {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: var(--primary-dark);
-    color: var(--bg-white);
+    background: var(--bg-light);
+    color: var(--primary-text);
     padding: 60px 0 30px;
 }
 
@@ -576,7 +576,7 @@ section {
 }
 
 .footer-section h3 {
-    color: var(--bg-white);
+    color: var(--primary-dark);
     margin-bottom: 16px;
     font-size: 18px;
 }
@@ -590,13 +590,13 @@ section {
 }
 
 .footer-section a {
-    color: var(--primary-light);
+    color: var(--primary-text);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-    color: var(--bg-white);
+    color: var(--accent-blue);
 }
 
 .footer-bottom {
@@ -604,7 +604,7 @@ section {
     margin-top: 40px;
     padding-top: 30px;
     text-align: center;
-    color: var(--primary-light);
+    color: var(--primary-text);
     font-size: 14px;
 }
 
