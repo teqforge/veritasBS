@@ -781,4 +781,7 @@ section {
 *:focus {
     outline: 2px solid var(--accent-blue);
     outline-offset: 2px;
-} 
+}
+
+/* ===== BLOG STYLES ===== */
+@import url('blog.css'); 

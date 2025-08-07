@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Veritas BS - Reality Check Blog</title>
+        <description>Insights, frameworks, and practical tools for better decision-making</description>
+        <link>https://veritasbs.co.uk/blog/</link>
+        <language>en-GB</language>
+        <lastBuildDate>Mon, 01 Dec 2024 10:00:00 GMT</lastBuildDate>
+        <image>
+            <url>https://veritasbs.co.uk/assets/logo.svg</url>
+            <title>Veritas BS - Reality Check Blog</title>
+            <link>https://veritasbs.co.uk/blog/</link>
+        </image>
+        
+        <item>
+            <title>5 Frameworks for Better Decisions Under Uncertainty</title>
+            <description>Learn proven decision-making frameworks that help you navigate complex choices and avoid common pitfalls when the future is unclear.</description>
+            <link>https://veritasbs.co.uk/blog/5-frameworks-better-decisions</link>
+            <guid>https://veritasbs.co.uk/blog/5-frameworks-better-decisions</guid>
+            <pubDate>Sun, 01 Dec 2024 10:00:00 GMT</pubDate>
+            <category>Decision Making</category>
+            <content:encoded><![CDATA[
+                <p>Most business decisions are made with incomplete information. Here are five proven frameworks that help you navigate complex choices and avoid common pitfalls when the future is unclear.</p>
+                <p>Every week, companies waste millions making decisions based on gut feelings, wishful thinking, or the loudest voice in the room. When you're dealing with uncertainty—and let's be honest, that's most of the time—traditional decision-making frameworks often fall short.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>How to Spot Fake News: A Reality Check Guide</title>
+            <description>Master the art of detecting misinformation with these practical techniques and verification tools. In a world drowning in false information, these skills can save your business from costly mistakes.</description>
+            <link>https://veritasbs.co.uk/blog/spot-fake-news</link>
+            <guid>https://veritasbs.co.uk/blog/spot-fake-news</guid>
+            <pubDate>Fri, 01 Nov 2024 10:00:00 GMT</pubDate>
+            <category>Misinformation</category>
+            <content:encoded><![CDATA[
+                <p>A mid-sized company recently fell for a sophisticated misinformation campaign about new industry regulations. They spent £50,000 on unnecessary compliance measures before discovering the "regulations" didn't exist.</p>
+                <p>This isn't rare. Misinformation costs businesses millions annually through bad decisions based on false information. Here's how to apply Reality Check thinking to separate fact from fiction.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>The 10 Cognitive Biases That Cost Businesses Millions</title>
+            <description>Discover how unconscious biases affect business decisions and learn strategies to overcome them. These mental shortcuts cost companies millions annually—here's how to spot and prevent them.</description>
+            <link>https://veritasbs.co.uk/blog/cognitive-biases-cost-millions</link>
+            <guid>https://veritasbs.co.uk/blog/cognitive-biases-cost-millions</guid>
+            <pubDate>Tue, 01 Oct 2024 10:00:00 GMT</pubDate>
+            <category>Cognitive Biases</category>
+            <content:encoded><![CDATA[
+                <p>Theranos. Quibi. Google+. WeWork's initial valuation.</p>
+                <p>What do these spectacular business failures have in common? They weren't just bad ideas—they were good ideas corrupted by cognitive biases that prevented leaders from seeing reality clearly.</p>
+                <p>Cognitive biases aren't character flaws. They're mental shortcuts (heuristics) that help us make quick decisions with incomplete information.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Leadership Reality Checks: When Your Gut Is Wrong</title>
+            <description>Why experienced leaders still make bad decisions and how to build better decision-making processes when your intuition leads you astray.</description>
+            <link>https://veritasbs.co.uk/blog/leadership-reality-checks</link>
+            <guid>https://veritasbs.co.uk/blog/leadership-reality-checks</guid>
+            <pubDate>Sun, 01 Sep 2024 10:00:00 GMT</pubDate>
+            <category>Leadership</category>
+            <content:encoded><![CDATA[
+                <p>The more experienced you become as a leader, the more your team expects you to "know" things. They look to you for quick decisions, confident direction, and intuitive insights about complex problems.</p>
+                <p>This creates a dangerous trap: the pressure to appear decisive can prevent you from acknowledging uncertainty, asking for help, or admitting when your gut instinct might be wrong.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Strategic Planning Reality Check: Why Most Plans Fail</title>
+            <description>The hidden assumptions that derail strategic plans and how to create more realistic strategies that actually work in the real world.</description>
+            <link>https://veritasbs.co.uk/blog/strategic-planning-reality-check</link>
+            <guid>https://veritasbs.co.uk/blog/strategic-planning-reality-check</guid>
+            <pubDate>Thu, 01 Aug 2024 10:00:00 GMT</pubDate>
+            <category>Strategy</category>
+            <content:encoded><![CDATA[
+                <p>Most strategic plans fail not because they're poorly executed, but because they're built on flawed assumptions about how the world actually works.</p>
+                <p>In this article, we'll examine the most common planning failures and how to build strategies that stand up to reality.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>AI Decision Making: Hype vs. Reality</title>
+            <description>Separating fact from fiction in AI-powered decision making and what it means for your business decisions.</description>
+            <link>https://veritasbs.co.uk/blog/ai-decision-making-hype-reality</link>
+            <guid>https://veritasbs.co.uk/blog/ai-decision-making-hype-reality</guid>
+            <pubDate>Mon, 01 Jul 2024 10:00:00 GMT</pubDate>
+            <category>Technology</category>
+            <content:encoded><![CDATA[
+                <p>AI is transforming decision-making, but not in the ways most people expect. Understanding the reality behind the hype can help you make better choices about when and how to use AI in your business.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Risk Assessment Frameworks That Actually Work</title>
+            <description>Practical frameworks for identifying and mitigating business risks before they become disasters.</description>
+            <link>https://veritasbs.co.uk/blog/risk-assessment-frameworks</link>
+            <guid>https://veritasbs.co.uk/blog/risk-assessment-frameworks</guid>
+            <pubDate>Sat, 01 Jun 2024 10:00:00 GMT</pubDate>
+            <category>Risk Management</category>
+            <content:encoded><![CDATA[
+                <p>Traditional risk assessment often fails because it focuses on the wrong things. Here are frameworks that actually help you identify and manage real business risks.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>AI Decision Making: Hype vs. Reality</title>
+            <description>Separating fact from fiction in AI-powered decision making and what it means for your business decisions.</description>
+            <link>https://veritasbs.co.uk/blog/ai-decision-making-hype-reality</link>
+            <guid>https://veritasbs.co.uk/blog/ai-decision-making-hype-reality</guid>
+            <pubDate>Mon, 01 Jul 2024 10:00:00 GMT</pubDate>
+            <category>Technology</category>
+            <content:encoded><![CDATA[
+                <p>AI is transforming decision-making, but not in the ways most people expect. Understanding the reality behind the hype can help you make better choices about when and how to use AI in your business.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Risk Assessment Frameworks That Actually Work</title>
+            <description>Practical frameworks for identifying and mitigating business risks before they become disasters.</description>
+            <link>https://veritasbs.co.uk/blog/risk-assessment-frameworks</link>
+            <guid>https://veritasbs.co.uk/blog/risk-assessment-frameworks</guid>
+            <pubDate>Sat, 01 Jun 2024 10:00:00 GMT</pubDate>
+            <category>Risk Management</category>
+            <content:encoded><![CDATA[
+                <p>Traditional risk assessment often fails because it focuses on the wrong things. Here are frameworks that actually help you identify and manage real business risks.</p>
+            ]]></content:encoded>
+        </item>
+        
+        <item>
+            <title>Preventing Groupthink in Teams</title>
+            <description>How to create environments where diverse thinking thrives and bad decisions are caught early.</description>
+            <link>https://veritasbs.co.uk/blog/preventing-groupthink-teams</link>
+            <guid>https://veritasbs.co.uk/blog/preventing-groupthink-teams</guid>
+            <pubDate>Wed, 01 May 2024 10:00:00 GMT</pubDate>
+            <category>Psychology</category>
+            <content:encoded><![CDATA[
+                <p>Groupthink is one of the most dangerous decision-making failures in business. Learn how to build teams that make better decisions through constructive disagreement.</p>
+            ]]></content:encoded>
+        </item>
+    </channel>
+</rss> 

@@ -37,9 +37,57 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://veritasbs.co.uk/privacy.html</loc>
-    <lastmod>2024-12-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://veritasbs.co.uk/blog/5-frameworks-better-decisions</loc>
+    <lastmod>2024-12-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://veritasbs.co.uk/blog/spot-fake-news</loc>
+    <lastmod>2024-11-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veritasbs.co.uk/blog/cognitive-biases-cost-millions</loc>
+    <lastmod>2024-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://veritasbs.co.uk/blog/leadership-reality-checks</loc>
+    <lastmod>2024-09-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+      <url>
+        <loc>https://veritasbs.co.uk/blog/strategic-planning-reality-check</loc>
+        <lastmod>2024-08-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://veritasbs.co.uk/blog/ai-decision-making-hype-reality</loc>
+        <lastmod>2024-07-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://veritasbs.co.uk/blog/risk-assessment-frameworks</loc>
+        <lastmod>2024-06-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://veritasbs.co.uk/blog/preventing-groupthink-teams</loc>
+        <lastmod>2024-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://veritasbs.co.uk/privacy.html</loc>
+        <lastmod>2024-12-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
 </urlset> 
